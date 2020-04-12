@@ -109,3 +109,22 @@ pdftopng() {
 }
 # https://stackoverflow.com/a/13784772/
 # https://stackoverflow.com/a/6605085/
+
+# Open a SOCKS proxy and a fresh Chromium profile
+# $1: IP address to which the connection should be made
+# $2: SSH port (defaults to 22)
+# $3: port to use for SOCKS proxy (defaults to 4711)
+socks-chromium() {
+    if [ -z "$1" ]
+    then
+       echo No IP address provided.
+       return 1
+    fi
+    port="${3:-4711}"
+    dir="$(mktemp -dt chromium-$USER-$port-XXXXXXXXXX)"
+    chromium --proxy-server="socks://localhost:$port" \
+             --user-data-dir="$dir" &
+    ssh -TND "$port" "$1" -p "${2:-22}"
+    kill %1 2>/dev/null &
+    rm -rf "$dir"
+}
