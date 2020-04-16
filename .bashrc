@@ -56,9 +56,6 @@ unset SSH_AUTH_SOCK
 
 export VDPAU_DRIVER=nvidia
 
-alias diff-staged="git diff --staged --color | less -R"
-# https://stackoverflow.com/questions/1587846/how-do-i-show-the-changes-which-have-been-staged/1587877#1587877
-
 function unpushed-commits {
 	git log --color origin/$1..HEAD | less -R
 }
