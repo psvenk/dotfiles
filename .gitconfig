@@ -1,0 +1,12 @@
+[user]
+  name = psvenk
+  email = 45520974+psvenk@users.noreply.github.com
+  signingkey = 26172557
+[credential]
+  helper = cache
+[submodule]
+  recurse = true
+[push]
+  recurseSubmodules = check
+[commit]
+  gpgsign = true
