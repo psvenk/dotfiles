@@ -14,7 +14,9 @@
      (output-pdf "Atril")
      (output-html "xdg-open"))))
  '(inhibit-startup-screen t)
- '(package-selected-packages (quote (editorconfig cl-lib typescript-mode))))
+ '(package-selected-packages
+   (quote
+    (markdown-mode yaml-mode dockerfile-mode editorconfig cl-lib typescript-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

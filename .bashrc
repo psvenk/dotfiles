@@ -125,3 +125,7 @@ socks-chromium() {
     kill %1 2>/dev/null &
     rm -rf "$dir"
 }
+
+init-nvm() {
+    source /usr/share/nvm/init-nvm.sh
+}
