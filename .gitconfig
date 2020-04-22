@@ -10,3 +10,5 @@
   recurseSubmodules = check
 [commit]
   gpgsign = true
+[pull]
+  rebase = true
