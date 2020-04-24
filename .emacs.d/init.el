@@ -40,7 +40,9 @@
 ; START TABS CONFIG
 ; https://dougie.io/emacs/indentation/
 ;; Create a variable for our preferred tab width
-(setq custom-tab-width 2)
+(setq custom-tab-width 4)
+
+(setq-default indent-tabs-mode t)
 
 ;; Two callable functions for enabling/disabling tabs in Emacs
 (defun disable-tabs () (setq indent-tabs-mode nil))
@@ -51,6 +53,7 @@
 
 ;; Hooks to Enable Tabs
 (add-hook 'prog-mode-hook 'enable-tabs)
+(add-hook 'c-mode-hook 'enable-tabs)
 ;; Hooks to Disable Tabs
 (add-hook 'lisp-mode-hook 'disable-tabs)
 (add-hook 'emacs-lisp-mode-hook 'disable-tabs)
@@ -61,6 +64,7 @@
 ;; Language-Specific Tweaks
 (setq-default python-indent-offset custom-tab-width) ;; Python
 (setq-default js-indent-level custom-tab-width)      ;; Javascript
+(setq-default c-basic-offset custom-tab-width)       ;; C
 
 ;; Making electric-indent behave sanely
 (setq-default electric-indent-inhibit t)
