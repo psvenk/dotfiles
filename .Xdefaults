@@ -2,7 +2,6 @@
 ! https://gist.github.com/radiosilence/5891672
 
 URxvt.font: -misc-tamzen-medium-r-normal--17-*-*-*-*-*-iso8859-1
-URxvt.boldFont: -misc-tamzen-bold-r-normal--17-*-*-*-*-*-iso8859-1
 
 ! Colors
 ! https://bastian.rieck.ru/blog/posts/2013/making_urxvt_beautiful/
@@ -11,22 +10,23 @@ URxvt.boldFont: -misc-tamzen-bold-r-normal--17-*-*-*-*-*-iso8859-1
 URxvt.background: Black
 URxvt.foreground: White
 
-URxvt.color0:  #000000
-URxvt.color1:  #AA0000
-URxvt.color2:  #00AA00
-URxvt.color3:  #AA5500
-URxvt.color4:  #0000AA
-URxvt.color5:  #AA00AA
-URxvt.color6:  #00AAAA
-URxvt.color7:  #AAAAAA
-URxvt.color8:  #555555
-URxvt.color9:  #FF5555
-URxvt.color10: #55FF55
-URxvt.color11: #FFFF55
-URxvt.color12: #5555FF
-URxvt.color13: #FF55FF
-URxvt.color14: #55FFFF
-URxvt.color15: #FFFFFF
+URxvt.color0:   #000000
+URxvt.color1:   #A80000
+URxvt.color2:   #00A800
+URxvt.color3:   #A8A800
+URxvt.color4:   #0000A8
+URxvt.color5:   #A800A8
+URxvt.color6:   #00A8A8
+URxvt.color7:   #A8A8A8
+
+URxvt.color8:   #000054
+URxvt.color9:   #FF0054
+URxvt.color10:  #00FF54
+URxvt.color11:  #FFFF54
+URxvt.color12:  #0000FF
+URxvt.color13:  #FF00FF
+URxvt.color14:  #00FFFF
+URxvt.color15:  #FFFFFF
 
 URxvt.scrollBar_right: true
 
