@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=xset +fp /usr/share/fonts/local
+Hidden=false
+X-MATE-Autostart-enabled=true
+Name[en_US]=Load fonts for urxvt
+Name=Load fonts for urxvt
+Comment[en_US]=
+Comment=
