@@ -153,3 +153,4 @@ X-GNOME-Bugzilla-Component=general
 X-GNOME-Bugzilla-Version=3.31.91
 X-MATE-Autostart-enabled=false
 X-GNOME-Autostart-enabled=false
+NotShowIn=i3
