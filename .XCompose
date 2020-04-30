@@ -1,3 +1,4 @@
 include "%L"
+include ".XCompose.d/greek"
 
 <Multi_key> <p> <i>		: "π"	U03C0	# GREEK SMALL LETTER PI
