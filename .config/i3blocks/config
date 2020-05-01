@@ -10,6 +10,11 @@
 separator=true
 separator_block_width=15
 
+[volume-pulseaudio]
+command=$SCRIPT_DIR/volume-pulseaudio
+interval=once
+signal=1
+
 [iface]
 command=$SCRIPT_DIR/iface
 color=#00FF00
