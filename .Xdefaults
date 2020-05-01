@@ -1,7 +1,7 @@
 ! Tamzen
 ! https://gist.github.com/radiosilence/5891672
 
-URxvt.font: -misc-tamzen-medium-r-normal--17-*-*-*-*-*-iso8859-1
+URxvt.font: -misc-tamzen-medium-r-normal--17-*-*-*-*-*-iso8859-1,-*-unifont-medium-*-*-*-16-*-*-*-*-*-*-*
 
 ! Colors
 ! https://bastian.rieck.ru/blog/posts/2013/making_urxvt_beautiful/
