@@ -1,0 +1,45 @@
+# i3blocks configuration file
+#
+# The i3blocks man page describes the usage of the binary,
+# and its website describes the configuration:
+#
+#     https://vivien.github.io/i3blocks
+
+
+# Global properties
+separator=true
+separator_block_width=15
+
+[iface]
+command=$SCRIPT_DIR/iface
+color=#00FF00
+interval=10
+
+[load]
+command=$SCRIPT_DIR/load_average
+label=Load: 
+interval=10
+
+[memory]
+command=$SCRIPT_DIR/memory
+interval=30
+
+[weather]
+command=$SCRIPT_DIR/weather
+color=#A4C2F4
+interval=1800
+
+[calendar]
+command=$SCRIPT_DIR/calendar
+interval=3600
+DATEFMT=+%a %b %d
+SHORTFMT=+%a %b %d
+HEIGHT=180
+WIDTH=220
+
+[time]
+command=$SCRIPT_DIR/time
+interval=1
+STRFTIME_FORMAT=%I:%M:%S %p
+TZONES=$DEFAULT_TZ,Asia/Kolkata,Etc/UTC
+TZ_LABELS=,India,UTC

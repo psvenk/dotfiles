@@ -1,0 +1,8 @@
+#!/bin/bash
+# written by me
+
+MSG=($(curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2))
+
+echo ${MSG[@]}
+echo ${MSG[0]}
+
