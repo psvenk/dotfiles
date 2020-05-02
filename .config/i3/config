@@ -186,6 +186,7 @@ for_window [class="Xsane" title="Viewer"] floating disable
 for_window [class="KeePassXC"] floating enable sticky enable
 for_window [class="zoom"] floating enable
 for_window [class="Thunderbird"] floating enable
+for_window [class="Mate-screenshot" title="Save Screenshot"] sticky enable
 
 for_window [window_role="(About|Preferences|Error)"] floating enable
 for_window [window_role="view-source"] floating enable
