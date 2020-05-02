@@ -47,3 +47,5 @@ URxvt.perl-ext-common: default,vtwheel
 ! https://wilmer.gaa.st/blog/archives/36-rxvt-unicode-and-ISO-14755-mode.html#c289
 URxvt.iso14755: true
 URxvt.iso14755_52: false
+
+URxvt.inputMethod: ibus
