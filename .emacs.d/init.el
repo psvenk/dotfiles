@@ -2,6 +2,9 @@
 (add-to-list 'load-path "~/.emacs.d/better-defaults")
 (require 'better-defaults)
 
+(add-to-list 'load-path "~/.emacs.d/column-marker")
+(require 'column-marker)
+
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
@@ -29,6 +32,8 @@
 (add-to-list 'package-archives
              '("melpa-stable" . "https://stable.melpa.org/packages/"))
 
+(package-initialize)
+
 ; guess-style
 ; https://github.com/nschum/guess-style
 ;(add-to-list 'load-path "~/.emacs.d/guess-style")
@@ -53,7 +58,7 @@
 
 ;; Hooks to Enable Tabs
 (add-hook 'prog-mode-hook 'enable-tabs)
-(add-hook 'c-mode-hook 'enable-tabs)
+;(add-hook 'c-mode-hook 'enable-tabs)
 ;; Hooks to Disable Tabs
 (add-hook 'lisp-mode-hook 'disable-tabs)
 (add-hook 'emacs-lisp-mode-hook 'disable-tabs)
@@ -64,7 +69,7 @@
 ;; Language-Specific Tweaks
 (setq-default python-indent-offset custom-tab-width) ;; Python
 (setq-default js-indent-level custom-tab-width)      ;; Javascript
-(setq-default c-basic-offset custom-tab-width)       ;; C
+;(setq-default c-basic-offset custom-tab-width)       ;; C
 
 ;; Making electric-indent behave sanely
 (setq-default electric-indent-inhibit t)
