@@ -15,6 +15,10 @@ command=$SCRIPT_DIR/volume-pulseaudio
 interval=once
 signal=1
 
+[aurcheck]
+command=$SCRIPT_DIR/aurcheck
+interval=3600
+
 [iface]
 command=$SCRIPT_DIR/iface
 color=#00FF00

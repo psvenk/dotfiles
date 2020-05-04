@@ -1,0 +1,3 @@
+#!/bin/sh
+# List explicitly installed AUR packages
+pacman -Qqm | grep "$(pacman -Qqe)"

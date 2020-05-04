@@ -1,0 +1,30 @@
+#!/bin/sh
+
+pkgs="$("$HOME"/bin/aurcheck)"
+numpkgs="$(printf "%s\n" "$pkgs" | wc -l)"
+
+if [ -z "$pkgs" ]
+then
+	echo "AUR: up to date"
+	echo "AUR: 0"
+	echo "#00ff00"
+	if [ -n "$BLOCK_BUTTON" ]
+	then
+		notify-send -i "system-software-update" "AUR updates" \
+		"All up to date"
+	fi
+	exit
+elif [ "$numpkgs" -eq 1 ]
+then
+	printf "AUR: 1 update\n"
+	printf "AUR: 1\n"
+else
+	printf "AUR: %d updates\n" "$numpkgs"
+	printf "AUR: %d\n" "$numpkgs"
+fi
+
+printf "#ff8000\n"
+if [ -n "$BLOCK_BUTTON" ]
+then
+	notify-send -i "system-software-update" "AUR updates" "$pkgs"
+fi

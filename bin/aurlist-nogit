@@ -1,0 +1,6 @@
+#!/bin/sh
+# List AUR (or other non-official) packages that do not have
+# a cloned git repository
+
+pkgs="$(for dir in ~/src/aur/* ~/src/aur/mine/*; do basename "$dir"; done)"
+pacman -Qqm | grep -v "$pkgs" -
