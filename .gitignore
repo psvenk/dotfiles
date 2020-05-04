@@ -1,0 +1,11 @@
+/*
+
+!/.gitignore
+!/.config/i3
+!/.config/i3status
+!/.config/i3blocks
+!/.config/i3blocks/blocklets
+!/.config/autostart
+!/.config/keepmenu
+!/.vim/pack/local
+!/bin
