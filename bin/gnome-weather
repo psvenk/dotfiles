@@ -1,0 +1,3 @@
+#!/bin/sh
+export GTK_THEME=Adwaita
+exec /usr/bin/gnome-weather

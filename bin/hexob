@@ -1,0 +1,3 @@
+#!/bin/bash
+xsel -ob | xxd | gxmessage -fn "monospace" -file -
+# https://security.stackexchange.com/a/182698
