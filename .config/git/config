@@ -1,14 +1,14 @@
 [user]
-  name = psvenk
-  email = 45520974+psvenk@users.noreply.github.com
-  signingkey = 26172557
+	name = psvenk
+	email = 45520974+psvenk@users.noreply.github.com
+	signingkey = 26172557
 [credential]
-  helper = cache
+	helper = cache
 [submodule]
-  recurse = true
+	recurse = true
 [push]
-  recurseSubmodules = check
+	recurseSubmodules = check
 [commit]
-  gpgsign = true
+	gpgsign = true
 [pull]
-  rebase = true
+	rebase = true
