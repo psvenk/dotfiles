@@ -19,10 +19,10 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 set $refresh_i3blocks pkill -RTMIN+1 i3blocks
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id \
-pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3blocks
+pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3blocks
 
 bindsym XF86AudioLowerVolume exec --no-startup-id \
-pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3blocks
+pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3blocks
 
 bindsym XF86AudioMute exec --no-startup-id \
 pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3blocks
@@ -187,6 +187,8 @@ for_window [class="KeePassXC"] floating enable sticky enable
 for_window [class="zoom"] floating enable
 for_window [class="Thunderbird"] floating enable
 for_window [class="Mate-screenshot" title="Save Screenshot"] sticky enable
+for_window [class="Tilem2"] floating enable
+for_window [class="VirtualBox"] floating enable
 
 for_window [window_role="(About|Preferences|Error)"] floating enable
 for_window [window_role="view-source"] floating enable

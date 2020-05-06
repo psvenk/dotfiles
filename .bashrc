@@ -37,7 +37,7 @@ export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
 
-export EDITOR=nano
+export EDITOR=vim
 
 PATH=~/bin:~/perl5/bin:~/.cargo/bin:$PATH;
 
