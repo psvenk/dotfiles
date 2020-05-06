@@ -13,3 +13,5 @@
 	template = ~/.config/git/message
 [pull]
 	rebase = true
+[diff]
+	algorithm = patience
