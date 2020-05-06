@@ -8,9 +8,10 @@ do
 	fi
 	cd "$dir" || continue
 
-	git fetch
-	if [ "$(git rev-parse HEAD)" != "$(git rev-parse '@{u}')" ]; then
-		echo "$pkg"
-	fi
+	git fetch >/dev/null
+	if [ "$(git rev-parse HEAD)" != "$(git rev-parse '@{u}')" ]
 	# https://stackoverflow.com/a/17938274
+	then
+		printf "%s\n" "$pkg"
+	fi
 done

@@ -3,4 +3,4 @@
 # a cloned git repository
 
 pkgs="$(for dir in ~/src/aur/* ~/src/aur/mine/*; do basename "$dir"; done)"
-pacman -Qqm | grep -v "$pkgs" -
+pacman -Qqm | grep -ve "$pkgs" -e "^texlive-local-" -
