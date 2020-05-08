@@ -33,14 +33,6 @@ case ${TERM} in
 esac
 # from /etc/bash.bashrc
 
-export GTK_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-export QT_IM_MODULE=ibus
-
-export EDITOR=vim
-
-PATH=~/bin:~/perl5/bin:~/.cargo/bin:$PATH;
-
 PERL5LIB="$HOME/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="$HOME/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"$HOME/perl5\""; export PERL_MB_OPT;
@@ -49,12 +41,6 @@ PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"; export PERL_MM_OPT;
 # Use bash-completion, if available
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
 	. /usr/share/bash-completion/bash_completion
-
-# Disable gnome-keyring graphical SSH password prompts
-# (see <https://askubuntu.com/a/163216/>)
-unset SSH_AUTH_SOCK
-
-export VDPAU_DRIVER=nvidia
 
 function unpushed-commits {
 	git log --color origin/$1..HEAD | less -R
