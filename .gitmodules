@@ -4,3 +4,6 @@
 [submodule ".vim/pack/local/start/editorconfig-vim"]
 	path = .vim/pack/local/start/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim.git
+[submodule ".vim/pack/local/start/vim-latex"]
+	path = .vim/pack/local/start/vim-latex
+	url = https://github.com/vim-latex/vim-latex.git
