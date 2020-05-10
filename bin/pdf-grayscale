@@ -1,0 +1,10 @@
+#!/bin/sh
+# https://superuser.com/a/319101/
+
+gs \
+	-o "${2:-$(printf "%s" "$1" | sed 's/\.[^.]*$//')-grayscale.pdf}" \
+	-sDEVICE=pdfwrite \
+	-sColorConversionStrategy=Gray \
+	-dProcessColorModel=/DeviceGray \
+	-dCompatibilityLevel=1.4 \
+	"$1"

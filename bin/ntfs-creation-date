@@ -1,0 +1,6 @@
+#!/bin/sh
+# https://unix.stackexchange.com/a/87275
+
+getfattr --only-values -n system.ntfs_crtime_be "$1" 2>/dev/null \
+| perl -MPOSIX -0777 -ne \
+	'$t = unpack("Q>"); print ctime $t/10000000-11644473600'
