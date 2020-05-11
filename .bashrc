@@ -14,6 +14,13 @@ newline_if_long_path() {
 	else printf " "; fi
 }
 
+# Allow 5000 history entries (instead of 500)
+export HISTSIZE=5000
+export HISTFILESIZE=5000
+
+# Append to history instead of overwriting
+shopt -s histappend
+
 PROMPT_COMMAND='
 ORANGE="$(tput setaf 3)" CYAN="$(tput setaf 6)" \
 GREEN="$(tput setaf 2)" RED="$(tput setaf 1)" RESET="$(tput sgr0)" \
