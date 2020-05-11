@@ -14,8 +14,9 @@ set mouse=a
 " Automatically continue comment lines
 set formatoptions^=cro
 
-" Map jj to escape in insert and replace modes
+" Map jj and jk to escape in insert and replace modes
 inoremap jj <Esc>
+inoremap jk <Esc>
 
 " Allow filetype-specific plugins and indenting
 filetype plugin indent on

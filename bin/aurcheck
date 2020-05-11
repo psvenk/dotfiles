@@ -2,7 +2,7 @@
 for dir in ~/src/aur/*
 do
 	pkg="$(basename "$dir")"
-	if [ "$pkg" = "mine" ]
+	if [ "$pkg" = "mine" ] || [ "$pkg" = "not-installed" ]
 	then
 		continue
 	fi
