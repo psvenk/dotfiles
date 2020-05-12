@@ -7,3 +7,6 @@
 [submodule ".vim/pack/local/start/vim-latex"]
 	path = .vim/pack/local/start/vim-latex
 	url = https://github.com/vim-latex/vim-latex.git
+[submodule ".vim/pack/local/start/nim.vim"]
+	path = .vim/pack/local/start/nim.vim
+	url = https://github.com/zah/nim.vim.git
