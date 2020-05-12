@@ -1,4 +1,4 @@
-export PATH=~/bin:~/perl5/bin:~/.cargo/bin:$PATH
+export PATH=~/bin:~/perl5/bin:~/.cargo/bin:~/.gem/ruby/2.7.0/bin:$PATH
 
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
