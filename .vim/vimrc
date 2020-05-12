@@ -18,6 +18,9 @@ set formatoptions^=cro
 inoremap jj <Esc>
 inoremap jk <Esc>
 
+" Allow backspacing over autoindent, line breaks, and start of insert
+set backspace=indent,eol,start
+
 " Allow filetype-specific plugins and indenting
 filetype plugin indent on
 
