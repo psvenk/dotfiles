@@ -1,0 +1,43 @@
+"1.3.1
+
+loadplugins '\.(js|penta)$'
+group user
+
+set defsearch=duckduckgo
+
+" Follow hints only after pressing Enter
+set followhints=1
+
+" Show bookmarks bar
+set guioptions=BbCrs
+
+" Delete all user-defined commands for sourcing
+" (workaround for <https://github.com/pentadactyl/pentadactyl/issues/16>)
+delcommand!
+
+command wayback,wb -bang -js
+	\ -description "Look up page in the Wayback Machine"
+	\ commands.execute(
+	\ 	(bang ? "open " : "tabopen ")
+	\ 	+ "https://web.archive.org/web/*/" + buffer.uri.spec
+	\ )
+
+command waybacksave,ws -bang -js
+	\ -description "Save page in the Wayback Machine"
+	\ commands.execute(
+	\ 	(bang ? "open " : "bg tabopen ")
+	\ 	+ "https://web.archive.org/save/" + buffer.uri.spec
+	\ )
+
+" For some reason, running :rehash does not do this.
+command reloadconfig,rcfg -description "Reload config file"
+	\ source "~/.pentadactylrc"
+
+" Disable and enable NoScript
+" (This is needed upon restarting Pale Moon for NoScript's banner
+" to show up)
+command reloadnoscript,rns -description "Reload NoScript"
+	\ extdisable NoScript
+	\ extenable NoScript
+
+" vim: set ft=pentadactyl:
