@@ -13,3 +13,6 @@
 [submodule ".vim/pack/local/start/vim-pentadactyl"]
 	path = .vim/pack/local/start/vim-pentadactyl
 	url = https://github.com/joedicastro/vim-pentadactyl.git
+[submodule ".pentadactyl/pentadactyl"]
+	path = .pentadactyl/pentadactyl
+	url = https://github.com/pentadactyl/pentadactyl.git

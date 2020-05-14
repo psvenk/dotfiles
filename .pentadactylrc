@@ -15,18 +15,24 @@ set guioptions=BbCrs
 " (workaround for <https://github.com/pentadactyl/pentadactyl/issues/16>)
 delcommand!
 
-command wayback,wb -bang -js
+" Skip over collapsed tabs when switching tabs (Tree Style Tabs)
+map -ex <C-n> tabnextvisible
+map -ex <C-p> tabpreviousvisible
+
+command wayback,wb -bang -nargs=? -js
 	\ -description "Look up page in the Wayback Machine"
 	\ commands.execute(
 	\ 	(bang ? "open " : "tabopen ")
-	\ 	+ "https://web.archive.org/web/*/" + buffer.uri.spec
+	\ 	+ "https://web.archive.org/web/*/"
+	\ 	+ (args.toString() || buffer.uri.spec)
 	\ )
 
-command waybacksave,ws -bang -js
+command waybacksave,ws -bang -nargs=? -js
 	\ -description "Save page in the Wayback Machine"
 	\ commands.execute(
 	\ 	(bang ? "open " : "bg tabopen ")
-	\ 	+ "https://web.archive.org/save/" + buffer.uri.spec
+	\ 	+ "https://web.archive.org/save/"
+	\ 	+ (args.toString() || buffer.uri.spec)
 	\ )
 
 " For some reason, running :rehash does not do this.
@@ -39,5 +45,8 @@ command reloadconfig,rcfg -description "Reload config file"
 command reloadnoscript,rns -description "Reload NoScript"
 	\ extdisable NoScript
 	\ extenable NoScript
+
+command newtab,nt -description "Open a new tab"
+	\ tabopen about:logopage
 
 " vim: set ft=pentadactyl:
