@@ -1,6 +1,9 @@
 " Show line numbers in grey
 set number
 highlight LineNr ctermfg=Grey
+set cursorline
+highlight CursorLine none
+highlight CursorLineNr cterm=bold
 
 " Enable syntax highlighting
 syntax on
