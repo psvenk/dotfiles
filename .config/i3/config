@@ -174,9 +174,9 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-for_window [class="Pale moon"] layout stacking
-for_window [instance="chromium"] layout stacking
-for_window [class="Firefox"] layout stacking
+for_window [class="Pale moon"] layout tabbed
+for_window [instance="chromium"] layout tabbed
+for_window [class="Firefox"] layout tabbed
 
 for_window [class="Yad"] floating enable
 for_window [class="Caja"] floating enable
