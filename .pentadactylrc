@@ -8,31 +8,43 @@ set defsearch=duckduckgo
 " Follow hints only after pressing Enter
 set followhints=1
 
-" Show bookmarks bar
-set guioptions=BbCrs
-
-" Delete all user-defined commands for sourcing
-" (workaround for <https://github.com/pentadactyl/pentadactyl/issues/16>)
-delcommand!
+" Paste URLs using the X11 CLIPBOARD register instead of PRIMARY (selection)
+set defregister="+*"
 
 " Skip over collapsed tabs when switching tabs (Tree Style Tabs)
 map -ex <C-n> tabnextvisible
 map -ex <C-p> tabpreviousvisible
 
-command wayback,wb -bang -nargs=? -js
+" Make closing a tab with 'd' shift focus to the parent tab
+" or previously focused tab
+map -ex d tabclose
+
+" Delete all user-defined commands for sourcing
+" (workaround for <https://github.com/pentadactyl/pentadactyl/issues/16>)
+delcommand!
+
+command wayback,wb -bang -nargs=? -complete=url -js
 	\ -description "Look up page in the Wayback Machine"
 	\ commands.execute(
-	\ 	(bang ? "open " : "tabopen ")
+	\ 	(bang ? "open " : "tabchildopen ")
 	\ 	+ "https://web.archive.org/web/*/"
 	\ 	+ (args.toString() || buffer.uri.spec)
 	\ )
 
-command waybacksave,ws -bang -nargs=? -js
+command waybacksave,ws -bang -nargs=? -complete=url -js
 	\ -description "Save page in the Wayback Machine"
 	\ commands.execute(
-	\ 	(bang ? "open " : "bg tabopen ")
+	\ 	(bang ? "open " : "bg tabchildopen ")
 	\ 	+ "https://web.archive.org/save/"
 	\ 	+ (args.toString() || buffer.uri.spec)
+	\ )
+
+command invidious,inv -nargs * -complete=url -js
+	\ -description "View YouTube video on Invidious"
+	\ commands.execute(
+	\ 	"open " + (args.toString() || buffer.uri.spec).replace(
+	\ 		"youtube.com", "invidio.us"
+	\	)
 	\ )
 
 " For some reason, running :rehash does not do this.
@@ -40,13 +52,16 @@ command reloadconfig,rcfg -description "Reload config file"
 	\ source "~/.pentadactylrc"
 
 " Disable and enable NoScript
-" (This is needed upon restarting Pale Moon for NoScript's banner
-" to show up)
+" (This is needed upon restarting Pale Moon for NoScript's banner to show up)
 command reloadnoscript,rns -description "Reload NoScript"
 	\ extdisable NoScript
 	\ extenable NoScript
 
 command newtab,nt -description "Open a new tab"
 	\ tabopen about:logopage
+
+command Help,H -nargs * -complete help
+	\ -description "Open help in a new tab"
+	\ tab help <args>
 
 " vim: set ft=pentadactyl:
