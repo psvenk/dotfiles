@@ -2,7 +2,7 @@
 set number
 highlight LineNr ctermfg=Grey
 set cursorline
-highlight CursorLine none
+highlight clear CursorLine
 highlight CursorLineNr cterm=bold
 
 " Enable syntax highlighting
@@ -24,10 +24,17 @@ inoremap jk <Esc>
 " Allow backspacing over autoindent, line breaks, and start of insert
 set backspace=indent,eol,start
 
+set foldmethod=marker
+
 " Allow filetype-specific plugins and indenting
 filetype plugin indent on
 
 " Interpret .tex files as LaTeX by default
 let g:tex_flavor='latex'
-" Compile to PDF instead of DVI
-let g:Tex_DefaultTargetFormat='pdf'
+
+" Use Zathura to view PDF files
+let g:vimtex_view_method='zathura'
+
+" Do not indent on ampersands (this mixes tabs and spaces for alignment, which
+" is bad)
+let g:vimtex_indent_on_ampersands=0

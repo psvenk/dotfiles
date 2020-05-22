@@ -4,9 +4,6 @@
 [submodule ".vim/pack/local/start/editorconfig-vim"]
 	path = .vim/pack/local/start/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim.git
-[submodule ".vim/pack/local/start/vim-latex"]
-	path = .vim/pack/local/start/vim-latex
-	url = https://github.com/vim-latex/vim-latex.git
 [submodule ".vim/pack/local/start/nim.vim"]
 	path = .vim/pack/local/start/nim.vim
 	url = https://github.com/zah/nim.vim.git
@@ -16,3 +13,6 @@
 [submodule ".pentadactyl/pentadactyl"]
 	path = .pentadactyl/pentadactyl
 	url = https://github.com/pentadactyl/pentadactyl.git
+[submodule ".vim/pack/local/start/vimtex"]
+	path = .vim/pack/local/start/vimtex
+	url = https://github.com/lervag/vimtex.git
