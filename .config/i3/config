@@ -182,7 +182,7 @@ for_window [class="Yad"] floating enable
 for_window [class="Caja"] floating enable
 for_window [class="Eom"] floating enable
 for_window [class="Xsane"] floating enable
-for_window [class="Xsane" title="Viewer"] floating disable
+for_window [class="Xsane" title="^Viewer"] floating disable
 for_window [class="KeePassXC"] floating enable sticky enable
 for_window [class="zoom"] floating enable
 for_window [class="Thunderbird"] floating enable

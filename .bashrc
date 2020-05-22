@@ -4,7 +4,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-source .profile
+source ~/.profile
 
 alias ls='ls --color=auto'
 

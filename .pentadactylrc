@@ -15,6 +15,11 @@ set defregister="+*"
 map -ex <C-n> tabnextvisible
 map -ex <C-p> tabpreviousvisible
 
+" Keep tab switching on the home row
+" (analogous to back/forward, and more Vim-like)
+map J <C-n>
+map K <C-p>
+
 " Make closing a tab with 'd' shift focus to the parent tab
 " or previously focused tab
 map -ex d tabclose

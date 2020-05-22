@@ -21,6 +21,17 @@ export XDG_DATA_DIRS=/usr/local/share/:/usr/share/
 export XDG_CONFIG_DIRS=/etc/xdg
 export XDG_CACHE_HOME=~/.cache
 
+# Export XDG user directories
+source $XDG_CONFIG_HOME/user-dirs.dirs
+export XDG_DESKTOP_DIR
+export XDG_DOWNLOAD_DIR
+export XDG_TEMPLATES_DIR
+export XDG_PUBLICSHARE_DIR
+export XDG_DOCUMENTS_DIR
+export XDG_MUSIC_DIR
+export XDG_PICTURES_DIR
+export XDG_VIDEOS_DIR
+
 # Make misbehaving programs put their configuration files in XDG directories
 export HISTFILE=$XDG_DATA_HOME/bash/history
 export NODE_REPL_HISTORY=$XDG_DATA_HOME/node/repl_history
