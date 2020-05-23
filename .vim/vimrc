@@ -21,6 +21,12 @@ set formatoptions^=cro
 inoremap jj <Esc>
 inoremap jk <Esc>
 
+" See :help fo-table for explanation
+set fo+=1
+
+" Disallow overwriting clipboard with empty region
+set cpoptions+=E
+
 " Allow backspacing over autoindent, line breaks, and start of insert
 set backspace=indent,eol,start
 
