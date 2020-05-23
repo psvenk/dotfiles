@@ -16,3 +16,6 @@
 [submodule ".vim/pack/local/start/vimtex"]
 	path = .vim/pack/local/start/vimtex
 	url = https://github.com/lervag/vimtex.git
+[submodule ".vim/pack/local/start/vim-sandwich"]
+	path = .vim/pack/local/start/vim-sandwich
+	url = https://github.com/machakann/vim-sandwich
