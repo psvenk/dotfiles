@@ -1,0 +1,53 @@
+#!/bin/sh
+# List unused packages
+
+usage() {
+	printf "Usage: %s [-o]\n\n%s\n-o: %s %s\n" \
+		"$0" "Lists unused packages." \
+		"include packages on which there is only an optional" \
+		"dependency" \
+		1>&2
+}
+
+while getopts ":o" o
+do
+	case "$o" in
+	o)
+		includeoptdeps=1
+		;;
+	*)
+		usage
+		exit 1
+		;;
+	esac
+done
+
+# Get make dependencies of AUR packages
+for dir in ~/src/aur/* ~/src/aur/mine/*
+do
+	pkg="$(basename "$dir")"
+	if [ "$pkg" = "mine" ] || [ "$pkg" = "not-installed" ]
+	then
+		continue
+	fi
+	cd $dir
+	if [ ! -e "$dir/.SRCINFO" ]
+	then
+		makepkg --printsrcinfo > .SRCINFO
+	fi
+	makedeps="$makedeps $(grep makedepends .SRCINFO | sed 's/.*= //')"
+done
+
+# Put each make dependency on its own line, remove duplicates and blank lines,
+# and surround each line in ^ and $ to force an exact match with grep
+makedeps="$(\
+	printf "%s" "$makedeps" | tr ' ' '\n' | sort | uniq \
+	| sed -e'/^\s*$/d' -e's/^/^/' -e's/$/$/'\
+)"
+
+if [ -z "$includeoptdeps" ]
+then
+	pacman -Qtdq
+else
+	pacman -Qttdq
+fi | grep -v "$makedeps"
