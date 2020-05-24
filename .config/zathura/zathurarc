@@ -1,0 +1,5 @@
+" Use system clipboard instead of primary selection
+set selection-clipboard clipboard
+
+set window-title-home-tilde
+set statusbar-home-tilde
