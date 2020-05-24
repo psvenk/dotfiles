@@ -85,12 +85,3 @@ xmap am <Plug>(textobj-sandwich-literal-query-a)
 omap im <Plug>(textobj-sandwich-literal-query-i)
 omap am <Plug>(textobj-sandwich-literal-query-a)
 
-" Interpret .tex files as LaTeX by default
-let g:tex_flavor='latex'
-
-" Use Zathura to view PDF files
-let g:vimtex_view_method='zathura'
-
-" Do not indent on ampersands (this mixes tabs and spaces for alignment, which
-" is bad)
-let g:vimtex_indent_on_ampersands=0
