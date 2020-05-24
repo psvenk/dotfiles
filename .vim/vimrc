@@ -32,6 +32,9 @@ set backspace=indent,eol,start
 
 set foldmethod=marker
 
+" Use ~/.cache/vim/ for .netrwhist (respect XDG base directory specification)
+let g:netrw_home=$XDG_CACHE_HOME.'/vim'
+
 " Allow filetype-specific plugins and indenting
 filetype plugin indent on
 

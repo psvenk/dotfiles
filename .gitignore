@@ -7,5 +7,5 @@
 !/.config/i3blocks/blocklets
 !/.config/autostart
 !/.config/keepmenu
-!/.vim/pack/local
+!/.vim
 !/bin
