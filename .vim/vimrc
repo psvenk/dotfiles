@@ -30,8 +30,6 @@ set cpoptions+=E
 " Allow backspacing over autoindent, line breaks, and start of insert
 set backspace=indent,eol,start
 
-set foldmethod=marker
-
 " Use ~/.cache/vim/ for .netrwhist (respect XDG base directory specification)
 let g:netrw_home=$XDG_CACHE_HOME.'/vim'
 

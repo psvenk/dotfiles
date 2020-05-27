@@ -4,9 +4,6 @@
 [submodule ".vim/pack/local/start/editorconfig-vim"]
 	path = .vim/pack/local/start/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim.git
-[submodule ".vim/pack/local/start/nim.vim"]
-	path = .vim/pack/local/start/nim.vim
-	url = https://github.com/zah/nim.vim.git
 [submodule ".vim/pack/local/start/vim-pentadactyl"]
 	path = .vim/pack/local/start/vim-pentadactyl
 	url = https://github.com/joedicastro/vim-pentadactyl.git
@@ -19,3 +16,9 @@
 [submodule ".vim/pack/local/start/vim-sandwich"]
 	path = .vim/pack/local/start/vim-sandwich
 	url = https://github.com/machakann/vim-sandwich
+[submodule ".vim/pack/local/start/vim-fugitive"]
+	path = .vim/pack/local/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule ".vim/pack/local/start/vim-polyglot"]
+	path = .vim/pack/local/start/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot.git
