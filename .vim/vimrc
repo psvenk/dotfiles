@@ -1,12 +1,14 @@
-" Show line numbers in grey
-set number
-highlight LineNr ctermfg=Grey
-set cursorline
-highlight clear CursorLine
-highlight CursorLineNr cterm=bold
-
 " Enable syntax highlighting
 syntax on
+
+" Set color scheme
+colorscheme mycolors
+
+" Use I-beam cursor in insert mode on urxvt
+if &term is# 'rxvt-unicode-256color' || &term is# 'xterm-termite'
+	let &t_SI = "\e[6 q"
+	let &t_EI = "\e[2 q"
+endif
 
 " Enable X11 clipboard
 set clipboard^=unnamedplus
@@ -17,11 +19,7 @@ set mouse=a
 " Automatically continue comment lines
 set formatoptions^=cro
 
-" Map jj and jk to escape in insert and replace modes
-inoremap jj <Esc>
-inoremap jk <Esc>
-
-" See :help fo-table for explanation
+" Don't break a line after a one-letter word
 set fo+=1
 
 " Disallow overwriting clipboard with empty region
@@ -32,6 +30,27 @@ set backspace=indent,eol,start
 
 " Use ~/.cache/vim/ for .netrwhist (respect XDG base directory specification)
 let g:netrw_home=$XDG_CACHE_HOME.'/vim'
+
+" Search into subfolders with :find
+set path+=**
+
+" Display all matching files with tab completion
+set wildmenu
+
+" Use smartcase
+set ignorecase
+set smartcase
+
+" Automatically open quickfix window on :make
+autocmd QuickFixCmdPost [^l]* cwindow
+autocmd QuickFixCmdPost    l* lwindow
+
+" Automatically resize quickfix window based on output
+" https://vim.fandom.com/wiki/Automatically_fitting_a_quickfix_window_height
+function! AdjustWindowHeight(minheight, maxheight)
+	exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
+endfunction
+"autocmd FileType qf call AdjustWindowHeight(3, 10)
 
 " Allow filetype-specific plugins and indenting
 filetype plugin indent on

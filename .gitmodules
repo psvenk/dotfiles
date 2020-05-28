@@ -22,3 +22,6 @@
 [submodule ".vim/pack/local/start/vim-polyglot"]
 	path = .vim/pack/local/start/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot.git
+[submodule ".vim/pack/local/start/vim-commentary"]
+	path = .vim/pack/local/start/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
