@@ -10,7 +10,6 @@
 	recurseSubmodules = check
 [commit]
 	gpgsign = true
-	template = ~/.config/git/message
 [pull]
 	rebase = true
 [diff]
