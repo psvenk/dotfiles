@@ -1,7 +1,7 @@
 #!/bin/bash
 if shift 2>/dev/null
 then
-	urxvt -e "$@"
+	termite -e "$@"
 else
 	shopt -s extglob \
 	&& env PATH="${PATH##+([/[:alpha:]]):}" "$(basename "$0")"
