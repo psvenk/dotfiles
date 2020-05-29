@@ -4,11 +4,9 @@ if exists("syntax_on")
 endif
 
 " Show line numbers in grey
-set number
 hi LineNr ctermfg=Grey
 
 " Highlight number of currently focused line
-set cursorline
 hi CursorLine cterm=NONE
 hi CursorLineNr cterm=bold
 
@@ -21,16 +19,3 @@ hi diffLine ctermfg=DarkCyan
 hi diffSubname ctermfg=White
 hi diffAdded ctermfg=DarkGreen
 hi diffRemoved ctermfg=DarkRed
-
-" Basic settings to make it easier to use GVim if needed
-if has("gui_running")
-	" Set dark color scheme
-	hi Normal guifg=white guibg=black
-	set background=dark
-
-	" Disable cursor blinking
-	set guicursor=a:blinkon0
-
-	" Disable toolbars
-	set guioptions=
-endif
