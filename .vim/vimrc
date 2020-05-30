@@ -1,65 +1,54 @@
 " Enable syntax highlighting
 syntax on
-
-" Set color scheme
+" Use my color scheme
 colorscheme mycolors
-
 " Show line numbers and highlight current line number
 set number
 set cursorline
 
-" Use I-beam cursor in insert mode on urxvt
+" Change cursor shape in insert, replace, and operator pending modes
 if &term is# 'rxvt-unicode-256color' || &term is# 'xterm-termite'
 	let &t_SI = "\e[6 q"
+	let &t_SR = "\e[4 q"
 	let &t_EI = "\e[2 q"
+	runtime op-pending-cursor.vim
+endif
+
+" Use true color (24-bit) in terminal
+if &term is# 'xterm-termite'
+	set termguicolors
 endif
 
 " Enable X11 clipboard
 set clipboard^=unnamedplus
-
 " Enable mouse support
 set mouse=a
-
 " Automatically continue comment lines
 set formatoptions^=cro
-
 " Don't break a line after a one-letter word
 set fo+=1
-
 " Disallow overwriting clipboard with empty region
 set cpoptions+=E
-
-" Allow backspacing over autoindent, line breaks, and start of insert
+" Allow backspacing over everything
 set backspace=indent,eol,start
+" Allow :find to search into subfolders
+set path+=**
+" Better tab completion in command mode
+set wildmenu
+" Ignore case when searching unless an uppercase letter is typed
+set ignorecase
+set smartcase
 
 " Use ~/.cache/vim/ for .netrwhist (respect XDG base directory specification)
 let g:netrw_home=$XDG_CACHE_HOME.'/vim'
 
-" Search into subfolders with :find
-set path+=**
-
-" Display all matching files with tab completion
-set wildmenu
-
-" Use smartcase
-set ignorecase
-set smartcase
-
-" Automatically open quickfix window on :make
-autocmd QuickFixCmdPost [^l]* cwindow
-autocmd QuickFixCmdPost    l* lwindow
-
-" Automatically resize quickfix window based on output
-" https://vim.fandom.com/wiki/Automatically_fitting_a_quickfix_window_height
-function! AdjustWindowHeight(minheight, maxheight)
-	exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
-endfunction
-"autocmd FileType qf call AdjustWindowHeight(3, 10)
+" Recommended in editorconfig-vim README for interop with fugitive.vim
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 " Allow filetype-specific plugins and indenting
 filetype plugin indent on
 
-" Use vim-surround keymappings for vim-sandwich
+" Use vim-surround keymappings for vim-sandwich {{{
 " https://github.com/machakann/vim-sandwich/wiki/Introduce-vim-surround-keymappings
 " https://github.com/machakann/vim-sandwich/wiki/Bracket-with-spaces
 runtime START macros/sandwich/keymap/surround.vim
@@ -92,8 +81,9 @@ let g:sandwich#recipes += [
 	\	'input': ['(']
 	\ },
 	\ ]
+"}}}
 
-" Mappings for vim-sandwich textobjects
+" Mappings for vim-sandwich textobjects {{{
 xmap is <Plug>(textobj-sandwich-query-i)
 xmap as <Plug>(textobj-sandwich-query-a)
 omap is <Plug>(textobj-sandwich-query-i)
@@ -108,8 +98,9 @@ xmap im <Plug>(textobj-sandwich-literal-query-i)
 xmap am <Plug>(textobj-sandwich-literal-query-a)
 omap im <Plug>(textobj-sandwich-literal-query-i)
 omap am <Plug>(textobj-sandwich-literal-query-a)
+"}}}
 
-" Basic settings to make it easier to use GVim if needed
+" Basic settings to make it easier to use GVim if needed {{{
 if has("gui_running")
 	" Set dark color scheme
 	hi Normal guifg=white guibg=black
@@ -121,3 +112,6 @@ if has("gui_running")
 	" Disable toolbars
 	set guioptions=
 endif
+"}}}
+
+" vim: fdm=marker
