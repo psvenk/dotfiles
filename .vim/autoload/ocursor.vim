@@ -2,9 +2,9 @@
 "
 " Authors: laktak and Martin Tournoij on Vi and Vim Stack Exchange
 " 	https://vi.stackexchange.com/a/11738
-" Modified slightly by psvenk to use regex matching for mode names and
-" to stop a block cursor from being activated upon entering insert mode
-" after operator pending mode (e.g. caw)
+" Modified slightly by psvenk to use regex matching for mode names, stop a block
+" cursor from being activated upon entering insert mode after operator pending
+" mode (e.g. caw), and work in autoload
 "
 " License: CC-BY-SA-4.0
 
@@ -30,7 +30,7 @@ function! s:setCursor(t)
 endfunction
 
 let s:prevmode = ''
-function! DetectPendingMode(timer)
+function ocursor#DetectPendingMode(timer)
     let l:mode = mode(1)
     if l:mode is# s:prevmode
         return
@@ -44,4 +44,3 @@ function! DetectPendingMode(timer)
     let s:prevmode = l:mode
 endfunction
 
-call timer_start(250, 'DetectPendingMode', {'repeat': -1})

@@ -7,11 +7,11 @@ set number
 set cursorline
 
 " Change cursor shape in insert, replace, and operator pending modes
-if &term is# 'rxvt-unicode-256color' || &term is# 'xterm-termite'
+if &term =~ 'xterm\|rxvt-unicode'
 	let &t_SI = "\e[6 q"
 	let &t_SR = "\e[4 q"
 	let &t_EI = "\e[2 q"
-	runtime op-pending-cursor.vim
+	call timer_start(250, 'ocursor#DetectPendingMode', {'repeat': -1})
 endif
 
 " Use true color (24-bit) in terminal
