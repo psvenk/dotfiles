@@ -6,12 +6,11 @@ colorscheme mycolors
 set number
 set cursorline
 
-" Change cursor shape in insert, replace, and operator pending modes
+" Change cursor shape in insert and replace modes
 if &term =~ 'xterm\|rxvt-unicode'
 	let &t_SI = "\e[6 q"
 	let &t_SR = "\e[4 q"
 	let &t_EI = "\e[2 q"
-	call timer_start(250, 'ocursor#DetectPendingMode', {'repeat': -1})
 endif
 
 " Use true color (24-bit) in terminal
@@ -38,6 +37,8 @@ set wildmenu
 " Ignore case when searching unless an uppercase letter is typed
 set ignorecase
 set smartcase
+" Show partial commands in bottom right corner
+set showcmd
 
 " Use ~/.cache/vim/ for .netrwhist (respect XDG base directory specification)
 let g:netrw_home=$XDG_CACHE_HOME.'/vim'
