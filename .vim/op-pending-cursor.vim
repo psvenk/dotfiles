@@ -1,7 +1,13 @@
 " Use an underline cursor for operator-pending mode.
+"
 " Authors: laktak and Martin Tournoij on Vi and Vim Stack Exchange
 " 	https://vi.stackexchange.com/a/11738
+" Modified slightly by psvenk to use regex matching for mode names and
+" to stop a block cursor from being activated upon entering insert mode
+" after operator pending mode (e.g. caw)
+"
 " License: CC-BY-SA-4.0
+
 
 " This is esentially:
 "   exec 'silent !printf "\e[" . a:t . ' q'
@@ -30,9 +36,9 @@ function! DetectPendingMode(timer)
         return
     endif
 
-    if l:mode is# 'no'
+    if l:mode =~# '^no'
         call <SID>setCursor(4)
-    elseif s:prevmode is# 'no'
+    elseif s:prevmode =~# '^no' && l:mode !~# '^i'
         call <SID>setCursor(2)
     endif
     let s:prevmode = l:mode
