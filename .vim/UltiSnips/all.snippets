@@ -1,0 +1,21 @@
+global !p
+from vimsnippets import get_comment_format
+
+comment_start, _, comment_end, _ = get_comment_format()
+endglobal
+
+snippet ( "( / )"
+($1)
+endsnippet
+
+snippet TODO "TODO comment"
+`!p
+snip.rv = comment_start
+` TODO: $1 (`
+git config user.name
+`, `
+date +%Y-%m-%d
+`) `!p
+snip.rv = comment_end
+`
+endsnippet

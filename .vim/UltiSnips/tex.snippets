@@ -1,0 +1,23 @@
+snippet begin "\begin{} / \end{}"
+\begin{$1}
+	$2
+\end{$1}
+endsnippet
+
+snippet "tab(ular)?" "tabular" r
+\begin{${1:tabular}}{$2}
+	$3
+\end{$1}
+endsnippet
+
+snippet " "TeX double quotes"
+\`\`$1''
+endsnippet
+
+snippet ` "TeX single quotes"
+\`$1'
+endsnippet
+
+snippet $ "TeX math mode"
+\$$1\$
+endsnippet
