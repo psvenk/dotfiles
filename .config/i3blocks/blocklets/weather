@@ -1,8 +1,24 @@
-#!/bin/bash
-# written by me
+#!/bin/sh
+# Copyright 2020 psvenk
 
-MSG=($(curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2))
+# Permission to use, copy, modify, and/or distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
 
-echo ${MSG[@]}
-echo ${MSG[0]}
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
+MSG="$(curl -Ss 'https://wttr.in/?0&T&Q' | cut -c 16-)"
+
+printf "%s" "$MSG" | head -n2 | tr -s '\n' ' '
+printf "\n%s\n" "$MSG" | head -n2
+
+if [ -n "$BLOCK_BUTTON" ]
+then
+	xdg-open 'https://wttr.in/'
+fi

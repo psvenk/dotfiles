@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 # from blocklets-contrib (modified)
 
 WIDTH=${WIDTH:-200}
@@ -39,3 +39,5 @@ case "$BLOCK_BUTTON" in
 esac
 echo "$LABEL$(date "$DATEFMT")"
 echo "$LABEL$(date "$SHORTFMT")"
+
+# vim: ft=sh
