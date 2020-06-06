@@ -20,6 +20,10 @@ map -ex <C-p> tabpreviousvisible
 map J <C-n>
 map K <C-p>
 
+" Disable <C-w> binding (it's very easy to close tabs while trying to switch
+" windows in Vim)
+map <C-w> <nop>
+
 " Make closing a tab with 'd' shift focus to the parent tab
 " or previously focused tab
 map -ex d tabclose

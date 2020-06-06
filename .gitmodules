@@ -28,3 +28,6 @@
 [submodule ".vim/pack/bundle/start/ultisnips"]
 	path = .vim/pack/bundle/start/ultisnips
 	url = https://github.com/SirVer/ultisnips.git
+[submodule ".vim/pack/lang/start/vim-markdown"]
+	path = .vim/pack/lang/start/vim-markdown
+	url = https://github.com/tpope/vim-markdown.git

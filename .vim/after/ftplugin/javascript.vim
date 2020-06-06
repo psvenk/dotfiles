@@ -1,6 +1,6 @@
-" Make tabs 2 characters wide instead of 8
-setlocal tabstop=2
-setlocal shiftwidth=2
+" Make tabs 4 characters wide instead of 8
+setlocal tabstop=4
+setlocal shiftwidth=4
 
 setlocal foldmethod=syntax
 
