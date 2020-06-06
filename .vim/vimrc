@@ -38,6 +38,13 @@ set smartcase
 " Show partial commands in bottom right corner
 set showcmd
 
+map <Leader>h
+	\ :echo "hi<"
+	\ . synIDattr(synID(line("."), col("."), 1), "name") . '> trans<'
+	\ . synIDattr(synID(line("."), col("."), 0), "name") . "> lo<"
+	\ . synIDattr(synIDtrans(synID(line("."), col("."), 1)), "name")
+	\ . ">"<CR>
+
 " Options set in /usr/share/vim/vimfiles/archlinux.vim {{{
 if !filereadable(globpath(&runtimepath, 'archlinux.vim'))
 	set backspace=indent,eol,start
@@ -134,10 +141,6 @@ let g:UltiSnipsEditSplit = 'context'
 
 " Basic settings to make it easier to use GVim if needed {{{
 if has("gui_running")
-	" Set dark color scheme
-	hi Normal guifg=white guibg=black
-	set background=dark
-
 	" Disable cursor blinking
 	set guicursor=a:blinkon0
 

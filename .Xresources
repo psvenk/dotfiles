@@ -10,6 +10,23 @@ URxvt.font: -misc-tamzen-medium-r-normal--17-*-*-*-*-*-iso8859-1,-*-unifont-medi
 URxvt.background: Black
 URxvt.foreground: White
 
+URxvt.color0: #000000
+URxvt.color1: #c23621
+URxvt.color2: #25bc24
+URxvt.color3: #adad27
+URxvt.color4: #492de1
+URxvt.color5: #d338d3
+URxvt.color6: #33bbc8
+URxvt.color7: #cbcccd
+URxvt.color8: #818383
+URxvt.color9: #fc391f
+URxvt.color10: #31e722
+URxvt.color11: #eaec23
+URxvt.color12: #5833ff
+URxvt.color13: #f935f8
+URxvt.color14: #14f0f0
+URxvt.color15: #e9ebeb
+
 URxvt.scrollBar: false
 
 ! Do not scroll with output
