@@ -1,5 +1,11 @@
 #!/bin/sh
-export PATH=~/bin:~/perl5/bin:~/.cargo/bin:~/.gem/ruby/2.7.0/bin:$PATH
+
+# Make sure that the PATH is updated exactly once (like an #ifdef guard in C)
+if [ -z "$PATHSET" ]
+then
+	export PATHSET=1
+	export PATH=~/bin:~/perl5/bin:~/.cargo/bin:~/.gem/ruby/2.7.0/bin:$PATH
+fi
 
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
