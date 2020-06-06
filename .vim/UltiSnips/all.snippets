@@ -1,7 +1,15 @@
 global !p
-from vimsnippets import get_comment_format
-
-comment_start, _, comment_end, _ = get_comment_format()
+# Get start and end delimiters of comments
+cs = vim.eval("&commentstring")
+if "%s" in cs:
+    cstart, cend = [s.strip() for s in vim.eval("&commentstring").split("%s")]
+    if cstart:
+        cstart = cstart + " "
+    if cend:
+        cend = " " + cend
+else:
+    cstart = ""
+    cend = ""
 endglobal
 
 snippet ( "( / )"
@@ -9,13 +17,8 @@ snippet ( "( / )"
 endsnippet
 
 snippet TODO "TODO comment"
-`!p
-snip.rv = comment_start
-` TODO: $1 (`
-git config user.name
-`, `
-date +%Y-%m-%d
-`) `!p
-snip.rv = comment_end
+`!p snip.rv = cstart
+`TODO: $1 (`git config user.name`, `date +%Y-%m-%d`)`!p
+snip.rv = cend
 `
 endsnippet
