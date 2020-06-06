@@ -1,9 +1,9 @@
-#!/bin/sh
+#!/usr/bin/env python3
 # dmenu-maim: dmenu wrapper for maim supporting saving to a file and copying to
 # the system clipboard, using the entire screen, a selection, or the currently
 # focused window
 #
-# Dependencies: maim (and slop), xdotool, xclip, mktemp
+# Dependencies: maim (and slop), xdotool, xclip
 
 # Copyright (c) 2020 psvenk
 # All rights reserved.
@@ -29,87 +29,93 @@
 # OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# TODO: allow options to be kept in one string
-opts=''
-while [ -z "$done" ]
-do
-	availargs='Done'
-	if [ -z "$save" ]
-	then
-		availargs=$(printf "%s\n%s" "$availargs" "Save to file")
-	fi
-	if [ -z "$copy" ]
-	then
-		availargs=$(printf "%s\n%s" "$availargs" "Copy to clipboard")
-	fi
+from subprocess import Popen, PIPE, DEVNULL, run
+from datetime import datetime
+from os import path, remove
+from tempfile import NamedTemporaryFile
 
-	if [ -z "$opts" ]
-	then
-		optstring="Options"
-	else
-		optstring="Options ($opts)"
-	fi
-	arg=$(dmenu -i -p "$optstring" <<EOF
-$availargs
-EOF
-	)
-	case "$arg" in
-	"Save to file")
-		save=1
-		opts="${opts}s"
-		;;
-	"Copy to clipboard")
-		copy=1
-		opts="${opts}c"
-		;;
-	*)
-		done=1
-		;;
-	esac
-done
+# Available options for screenshot (at least one of 's' or 'c' must be provided)
+options = {
+    "s": "Save to file",
+    "c": "Copy to clipboard",
+    "p": "Include mouse pointer",
+}
 
-# Exit early if no options were provided
-if [ -z "$opts" ]
-then
-	exit 1
-fi
+# Available modes for screenshot (exactly one must be provided)
+modes = {
+    "d": "Desktop",
+    "s": "Selection",
+    "w": "Window"
+}
 
-mode=$(dmenu -i -p "Mode" <<EOF
-Desktop
-Selection
-Window
-EOF
-)
+opts = ""
+done = False
 
-if [ -n "$save" ]
-then
-	filename="$HOME/images/Screenshots/screenshot-$(date +%Y-%m-%d-%H-%M-%S).png"
-else
-	filename="$(mktemp -t tmp-XXXXXXXXXX.png)"
-fi
+# Get options for screenshot
+while not done:
+    optstring = f"Options ({opts})" if opts else "Options"
+    dmenu = Popen(["dmenu", "-i", "-p", optstring],
+                  stdin=PIPE, stdout=PIPE, text=True)
 
-# TODO: add an option to disable 'u' flag (to show the cursor)
-case $mode in
-Desktop)
-	maim -u "$filename" 2>/dev/null || exit 1
-	;;
-Selection)
-	maim -us "$filename" 2>/dev/null || exit 1
-	;;
-Window)
-	maim -ui "$(xdotool getactivewindow)" "$filename" 2>/dev/null || exit 1
-	;;
-*)
-	exit 1
-	;;
-esac
+    # Populate list of available options
+    dmenu.stdin.write("d: Done\n")
+    for o, desc in options.items():
+        if o not in opts:
+            dmenu.stdin.write(f"{o}: {desc}\n")
 
-if [ -n "$copy" ]
-then
-	xclip -selection clipboard -t image/png "$filename"
-fi
+    # Get stdout from dmenu process, strip whitespace, only pay attention to
+    # characters before a colon (if present), and convert to lowercase
+    result = dmenu.communicate()[0].strip().split(":")[0].lower()
+    for o in options.keys():
+        if o in result:
+            opts += o
 
-if [ -z "$save" ]
-then
-	rm -f "$filename"
-fi
+    if "d" in result or not result:
+        done = True
+
+if "s" not in opts and "c" not in opts:
+    exit(1)
+
+# Get screenshot mode
+dmenu = Popen(["dmenu", "-i", "-p", "Mode"],
+              stdin=PIPE, stdout=PIPE, text=True)
+for m, desc in modes.items():
+    dmenu.stdin.write(f"{m}: {desc}\n")
+
+# Get first character of stdout and convert to lowercase
+mode = dmenu.communicate()[0].strip()[0].lower()
+
+if mode not in modes:
+    exit(1)
+
+if "s" in opts:
+    timestamp = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
+    outfile = open(path.expanduser(
+        f"~/images/Screenshots/screenshot-{timestamp}.png"
+    ), mode="wb")
+else:
+    outfile = NamedTemporaryFile(mode="wb", delete=False)
+
+cmdline = ["maim"]
+if "p" not in opts:
+    # Hide mouse pointer
+    cmdline.append("-u")
+if mode == "s":
+    # Grab a selection instead of the entire desktop
+    cmdline.append("-s")
+elif mode == "w":
+    # Grab current window
+    current_window = run(["xdotool", "getactivewindow"],
+                         capture_output=True, text=True).stdout.strip()
+    cmdline.extend(["-i", current_window])
+
+run(cmdline, stdin=DEVNULL, stdout=outfile, stderr=DEVNULL)
+outfile.close()
+
+if "c" in opts:
+    with open(outfile.name) as infile:
+        run(["xclip", "-selection", "clipboard", "-t", "image/png"],
+            stdin=infile)
+
+if "s" not in opts:
+    remove(outfile.name)
