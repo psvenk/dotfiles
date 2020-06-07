@@ -1,1 +1,2 @@
-set foldmethod=indent
+setlocal foldmethod=indent
+setlocal textwidth=79
