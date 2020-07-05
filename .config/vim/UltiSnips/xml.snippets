@@ -1,0 +1,13 @@
+snippet t "XML tag" i
+<${1:div}>
+	${2:${VISUAL}}
+</${1/([\w:._-]+).*/$1/}>
+endsnippet
+
+snippet ti "XML tag inline" i
+<${1:div}>${2:${VISUAL}}</${1/([\w:._-]+).*/$1/}>
+endsnippet
+
+snippet t/ "XML self-closing tag" i
+<$1 />
+endsnippet

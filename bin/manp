@@ -1,0 +1,3 @@
+#!/bin/sh
+# manp: man pretty
+man -t "$@" | zathura -

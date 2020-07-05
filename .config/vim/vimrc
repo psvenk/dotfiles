@@ -1,3 +1,12 @@
+" Respect XDG Base Directory Specification
+" <https://tlvince.com/vim-respect-xdg>
+set viminfo+=n$XDG_CACHE_HOME/vim/viminfo
+let &runtimepath = substitute(&runtimepath,
+	\ $HOME.'/.vim', $XDG_CONFIG_HOME.'/vim', 'g')
+let &packpath = substitute(&packpath,
+	\ $HOME.'/.vim', $XDG_CONFIG_HOME.'/vim', 'g')
+let g:netrw_home = $XDG_CACHE_HOME.'/vim'
+
 " Enable syntax highlighting
 syntax on
 " Use my color scheme
@@ -7,7 +16,7 @@ set number
 set cursorline
 
 " Change cursor shape in insert and replace modes
-if &term =~ 'xterm\|rxvt-unicode'
+if &term =~ 'xterm\|rxvt-unicode\|alacritty\|st'
 	let &t_SI = "\e[6 q"
 	let &t_SR = "\e[4 q"
 	let &t_EI = "\e[2 q"
@@ -15,6 +24,10 @@ endif
 
 " Use true color (24-bit) in terminal
 if &term is# 'xterm-termite'
+	set termguicolors
+elseif &term =~ 'alacritty\|st'
+	let &t_8f = "\e[38;2;%lu;%lu;%lum"
+	let &t_8b = "\e[48;2;%lu;%lu;%lum"
 	set termguicolors
 endif
 
@@ -24,8 +37,6 @@ set clipboard^=unnamedplus
 set mouse=a
 " Automatically continue comment lines
 set formatoptions^=cro
-" Don't break a line after a one-letter word
-set fo+=1
 " Disallow overwriting clipboard with empty region
 set cpoptions+=E
 " Allow :find to search into subfolders
@@ -35,8 +46,8 @@ set wildmenu
 " Ignore case when searching unless an uppercase letter is typed
 set ignorecase
 set smartcase
-" Show partial commands in bottom right corner
-set showcmd
+" Fold based on syntax where possible
+set foldmethod=syntax
 
 " Use space as Leader and LocalLeader
 let mapleader = ' '
@@ -79,8 +90,6 @@ if !filereadable(globpath(&runtimepath, 'archlinux.vim'))
 endif
 " }}}
 
-" Use ~/.cache/vim/ for .netrwhist (respect XDG base directory specification)
-let g:netrw_home=$XDG_CACHE_HOME.'/vim'
 " Recommended in editorconfig-vim README for interop with fugitive.vim
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
@@ -92,7 +101,7 @@ packadd! matchit
 
 " Disable vim-polyglot Markdown plugin; the included plugin is more
 " full-featured
-let g:polyglot_disabled = ['markdown']
+let g:polyglot_disabled = ['markdown', 'jst']
 
 " vim-sandwich {{{
 
@@ -121,6 +130,9 @@ omap am <Plug>(textobj-sandwich-literal-query-a)
 " Make :UltiSnipsEdit split the window
 let g:UltiSnipsEditSplit = 'context'
 
+" Markdown fenced languages
+let g:markdown_fenced_languages = ['latex=tex', 'sh', 'console=sh']
+
 " Basic settings to make it easier to use GVim if needed {{{
 if has("gui_running")
 	" Disable cursor blinking
@@ -128,7 +140,16 @@ if has("gui_running")
 
 	" Disable toolbars
 	set guioptions=
+
+	" Set dark background
+	hi Normal guifg=grey92 guibg=grey16
+	set background=dark
 endif
 "}}}
+
+augroup filetypes
+	au!
+	au BufNewFile,BufRead *.mbox set ft=mail
+augroup END
 
 " vim: fdm=marker

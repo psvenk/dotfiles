@@ -9,7 +9,10 @@ set defsearch=duckduckgo
 set followhints=1
 
 " Paste URLs using the X11 CLIPBOARD register instead of PRIMARY (selection)
-set defregister="+*"
+set defregister='+*'
+
+" Use regex by default for searching
+set ff+='r'
 
 " Skip over collapsed tabs when switching tabs (Tree Style Tabs)
 map -ex <C-n> tabnextvisible
@@ -20,9 +23,12 @@ map -ex <C-p> tabpreviousvisible
 map J <C-n>
 map K <C-p>
 
-" Disable <C-w> binding (it's very easy to close tabs while trying to switch
-" windows in Vim)
-map <C-w> <nop>
+" Disable <C-w> binding (switching windows in Vim)
+map <C-w> <Nop>
+" Disable <C-j> and <C-k> bindings (easy to press instead of J/K with Caps Lock
+" mapped to Ctrl)
+map <C-j> <Nop>
+map <C-k> <Nop>
 
 " Make closing a tab with 'd' shift focus to the parent tab
 " or previously focused tab
@@ -73,4 +79,4 @@ command Help,H -nargs * -complete help
 	\ -description "Open help in a new tab"
 	\ tab help <args>
 
-" vim: set ft=pentadactyl:
+" vim: set ft=pentadactyl tw=80:

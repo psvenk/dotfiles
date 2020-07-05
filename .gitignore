@@ -2,7 +2,6 @@
 
 !.gitignore
 
-!/.vim
 !/bin
 
 !/.config
@@ -10,6 +9,7 @@
 !/.config/autostart
 !/.config/dmenu-frecency
 /.config/dmenu-frecency/state
+/.config/dmenu-frecency/tmp*
 !/.config/git
 /.config/git/gitk
 !/.config/gtk-3.0
@@ -19,8 +19,13 @@
 !/.config/i3status
 !/.config/keepmenu
 !/.config/nano
+!/.config/pentadactyl
 !/.config/rofi
 !/.config/termite
+!/.config/vim
+!/.config/X11
 !/.config/zathura
+
+!/.local/share/rehome/
 
 __pycache__

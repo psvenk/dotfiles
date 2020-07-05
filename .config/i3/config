@@ -176,7 +176,6 @@ for_window [class="Xsane"] floating enable
 for_window [class="Xsane" title="^Viewer"] floating disable
 for_window [class="KeePassXC"] floating enable sticky enable
 for_window [class="zoom"] floating enable
-for_window [class="Thunderbird"] floating enable
 for_window [class="Mate-screenshot" title="Save Screenshot"] sticky enable
 for_window [class="Tilem2"] floating enable
 for_window [class="VirtualBox"] floating enable
@@ -197,13 +196,13 @@ bar {
 exec --no-startup-id dex -ae i3
 
 # Rebind keys with xmodmap
-exec --no-startup-id xmodmap ~/.XModMap
+# exec --no-startup-id xmodmap ~/.XModMap
 
 # Enable Num Lock
 exec --no-startup-id numlockx on
 
 # Set desktop background
-exec --no-startup-id source ~/.fehbg
+exec --no-startup-id ~/.local/share/rehome/feh/.fehbg
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {

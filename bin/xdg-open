@@ -1,0 +1,17 @@
+#!/bin/sh
+# Inspired by https://git.sr.ht/~sircmpwn/dotfiles/tree/master/bin/xdg-open
+# Because this is easier than configuring xdg-open
+case "$1" in
+*://texdoc.net/pkg/*)
+	pkg="${1##*://texdoc.net/pkg/}"
+	mkdir -p /tmp/texdoc/
+	if [ ! -e "/tmp/texdoc/$pkg.pdf" ]
+	then
+		curl -L "$1" >"/tmp/texdoc/$pkg.pdf" 2>/dev/null
+	fi
+	exec zathura "/tmp/texdoc/$pkg.pdf"
+	;;
+*)
+	exec /usr/bin/xdg-open "$@"
+	;;
+esac

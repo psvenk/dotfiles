@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+
+import sys
+
+def usage():
+    print('\n'.join([
+        f"Usage: rgbtohex RED GREEN BLUE",
+        f"RED, GREEN, and BLUE must be between zero and {0xff:d}, inclusive.",
+    ]))
+    sys.exit(1)
+
+if len(sys.argv) != 4:
+    usage()
+
+try:
+    red, green, blue = [int(n) for n in sys.argv[1:]]
+    if not all(0 <= n <= 0xff for n in (red, green, blue)):
+        usage()
+except ValueError:
+    usage()
+
+print(f"{red:x}{green:x}{blue:x}")

@@ -2,32 +2,32 @@
 	path = .config/i3blocks/i3blocks-contrib
 	url = https://github.com/vivien/i3blocks-contrib.git
 [submodule ".vim/pack/bundle/start/editorconfig-vim"]
-	path = .vim/pack/bundle/start/editorconfig-vim
+	path = .config/vim/pack/bundle/start/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim.git
 [submodule ".vim/pack/lang/start/vim-pentadactyl"]
-	path = .vim/pack/lang/start/vim-pentadactyl
+	path = .config/vim/pack/lang/start/vim-pentadactyl
 	url = https://github.com/joedicastro/vim-pentadactyl.git
-[submodule ".pentadactyl/pentadactyl"]
-	path = .pentadactyl/pentadactyl
-	url = https://github.com/pentadactyl/pentadactyl.git
 [submodule ".vim/pack/lang/start/vimtex"]
-	path = .vim/pack/lang/start/vimtex
+	path = .config/vim/pack/lang/start/vimtex
 	url = https://github.com/lervag/vimtex.git
 [submodule ".vim/pack/bundle/start/vim-sandwich"]
-	path = .vim/pack/bundle/start/vim-sandwich
+	path = .config/vim/pack/bundle/start/vim-sandwich
 	url = https://github.com/machakann/vim-sandwich
 [submodule ".vim/pack/bundle/start/vim-fugitive"]
-	path = .vim/pack/bundle/start/vim-fugitive
+	path = .config/vim/pack/bundle/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
 [submodule ".vim/pack/lang/start/vim-polyglot"]
-	path = .vim/pack/lang/start/vim-polyglot
+	path = .config/vim/pack/lang/start/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot.git
 [submodule ".vim/pack/bundle/start/vim-commentary"]
-	path = .vim/pack/bundle/start/vim-commentary
+	path = .config/vim/pack/bundle/start/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
 [submodule ".vim/pack/bundle/start/ultisnips"]
-	path = .vim/pack/bundle/start/ultisnips
+	path = .config/vim/pack/bundle/start/ultisnips
 	url = https://github.com/SirVer/ultisnips.git
 [submodule ".vim/pack/lang/start/vim-markdown"]
-	path = .vim/pack/lang/start/vim-markdown
+	path = .config/vim/pack/lang/start/vim-markdown
 	url = https://github.com/tpope/vim-markdown.git
+[submodule ".vim/pack/lang/start/ejs-syntax"]
+	path = .config/vim/pack/lang/start/ejs-syntax
+	url = https://github.com/nikvdp/ejs-syntax.git

@@ -4,8 +4,8 @@ if exists("syntax_on")
 endif
 
 " Set dark background
-hi Normal guifg=white guibg=black
-set background=dark
+" hi Normal guifg=white guibg=black
+" set background=dark
 
 " Show line numbers in grey
 hi LineNr ctermfg=Grey guifg=grey
@@ -38,3 +38,4 @@ hi diffRemoved ctermfg=DarkRed guifg=red3
 " Better colors for Markdown
 hi Underlined guifg=DodgerBlue
 hi Title guifg=coral
+hi link markdownHeadingRule Title

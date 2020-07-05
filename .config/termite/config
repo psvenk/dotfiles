@@ -46,15 +46,15 @@ cursor_blink = off
 #cursor = #dcdccc
 #cursor_foreground = #dcdccc
 
-foreground = #ffffff
-#foreground_bold = #ffffff
-#background = #3f3f3f
+foreground = #e9ebeb
+foreground_bold = #ffffff
+background = #2a2a2a
 
 # 20% background transparency (requires a compositor)
 #background = rgba(63, 63, 63, 0.8)
 
 # If unset, will reverse foreground and background
-highlight = #2f2f2f
+highlight = #666666
 
 # Colors from color0 to color254 can be set
 

@@ -9,7 +9,8 @@ function! tabstop#set(val)
 	if type(ec_config) != type({})
 		let l:ec_config = {}
 	endif
-	if !has_key(l:ec_config, 'indent_size') &&
+	if (!has_key(l:ec_config, 'indent_size') ||
+			\ l:ec_config['indent_size'] ==# 'tab') &&
 			\ !has_key(l:ec_config, 'tab_width')
 		exe 'setlocal tabstop=' . a:val
 		exe 'setlocal shiftwidth=' . a:val
