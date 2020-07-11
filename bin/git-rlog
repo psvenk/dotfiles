@@ -1,0 +1,3 @@
+#!/bin/sh
+# Show commits from remote
+git log -p '@..@{u}'
