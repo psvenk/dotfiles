@@ -31,8 +31,6 @@ elseif &term =~ 'alacritty\|st'
 	set termguicolors
 endif
 
-" Enable X11 clipboard
-set clipboard^=unnamedplus
 " Enable mouse support
 set mouse=a
 " Automatically continue comment lines
