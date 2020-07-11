@@ -101,7 +101,7 @@ packadd! matchit
 
 " Disable vim-polyglot Markdown plugin; the included plugin is more
 " full-featured
-let g:polyglot_disabled = ['markdown', 'jst']
+let g:polyglot_disabled = ['markdown', 'jst', 'v']
 
 " vim-sandwich {{{
 
