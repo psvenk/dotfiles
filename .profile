@@ -20,6 +20,10 @@ unset SSH_AUTH_SOCK
 
 export VDPAU_DRIVER=nvidia
 
+# Fix Qt scaling issues
+# (https://github.com/keepassxreboot/keepassxc/issues/5029)
+export QT_AUTO_SCREEN_SCALE_FACTOR=0
+
 # XDG Base Directory Specification environment variables
 # https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
 export XDG_DATA_HOME=~/.local/share
