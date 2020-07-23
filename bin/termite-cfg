@@ -1,0 +1,15 @@
+#!/bin/sh
+# Runs Termite with the specified config file.
+
+configdir=~/.config/termite/
+defaultconfig=$configdir/config
+
+if [ -f "$configdir/$1.config.in" ] && [ -f "$defaultconfig" ]
+then
+	cat "$defaultconfig" "$configdir/$1.config.in" >"$configdir/$1.config"
+	# Tell the spawned process the currently selected TERMITE_CFG
+	export TERMITE_CFG=$1
+	exec termite -c "$configdir/$1.config"
+else
+	exec termite
+fi

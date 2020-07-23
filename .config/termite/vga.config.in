@@ -1,0 +1,25 @@
+[options]
+allow_bold = false
+font = MxPlus IBM VGA8x16 16px
+
+[colors]
+# Use VGA color scheme from Wikipedia
+# https://en.wikipedia.org/w/index.php?title=ANSI_escape_code&oldid=959235695#3/4_bit
+color0 = rgb(0, 0, 0)
+color1 = rgb(170, 0, 0)
+color2 = rgb(0, 170, 0)
+color3 = rgb(170, 85, 0)
+color4 = rgb(0, 0, 170)
+color5 = rgb(170, 0, 170)
+color6 = rgb(0, 170, 170)
+color7 = rgb(170, 170, 170)
+color8 = rgb(85, 85, 85)
+color9 = rgb(255, 85, 85)
+color10 = rgb(85, 255, 85)
+color11 = rgb(255, 255, 85)
+color12 = rgb(85, 85, 255)
+color13 = rgb(255, 85, 255)
+color14 = rgb(85, 255, 255)
+color15 = rgb(255, 255, 255)
+
+# vim: ft=dosini cms=#%s

@@ -1,0 +1,19 @@
+#!/bin/sh
+# Wrapper for Neofetch passing the appropriate Termite config file.
+# $TERMITE_CFG may be set by termite-cfg.
+
+configdir=~/.config/termite/
+defaultconfig=$configdir/config
+
+if [ -f "$configdir/$TERMITE_CFG.config" ] \
+	&& [ -f "$defaultconfig" ] \
+	&& [ ! -e "$defaultconfig.bak" ]
+then
+	mv "$defaultconfig" "$defaultconfig.bak"
+	cp "$configdir/$TERMITE_CFG.config" "$defaultconfig"
+	/usr/bin/neofetch "$@"
+	rm "$defaultconfig"
+	mv "$defaultconfig.bak" "$defaultconfig"
+else
+	/usr/bin/neofetch "$@"
+fi
