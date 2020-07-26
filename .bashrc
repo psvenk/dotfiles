@@ -6,8 +6,6 @@
 
 source ~/.profile
 
-alias ls='ls --color=auto'
-
 # PS1='[\u@\h \W]\$ '
 
 newline_if_long_path() {
