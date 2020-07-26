@@ -27,8 +27,8 @@ case "$BLOCK_BUTTON" in
   1|2|3) 
 
 	# the position of the upper left corner of the popup
-	posX=$(($x - $relative_x + $width - $WIDTH))
-	posY=$(($y - $relative_y + $height))
+	posX=$((x - relative_x + width - WIDTH))
+	posY=$((y - relative_y + height))
 
 	i3-msg -q "exec yad --calendar \
         --width=$WIDTH --height=$HEIGHT \

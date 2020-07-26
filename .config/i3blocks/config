@@ -52,3 +52,5 @@ interval=1
 STRFTIME_FORMAT=%I:%M:%S %p
 TZONES=$DEFAULT_TZ,Asia/Kolkata,Etc/UTC
 TZ_LABELS=,India,UTC
+
+# vim: set ft=dosini:
