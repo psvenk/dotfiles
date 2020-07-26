@@ -33,7 +33,7 @@ echo "\[${GREEN}\]"; else echo "\[${RED}\]"; fi)\$\[${RESET}\]\
 $(newline_if_long_path)"'
 
 case ${TERM} in
-  xterm*|rxvt*|Eterm|aterm|kterm|gnome*|urxvt*)
+  xterm*|rxvt*|Eterm|aterm|kterm|gnome*|urxvt*|alacritty)
     PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf "\033]0;%s@%s:%s\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"'
 
     ;;

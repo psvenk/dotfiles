@@ -7,6 +7,9 @@
 !/.config
 /.config/*
 !/.config/autostart
+!/.config/alacritty/
+/.config/alacritty/*
+!/.config/alacritty/alacritty.yml
 !/.config/dmenu-frecency
 /.config/dmenu-frecency/state
 /.config/dmenu-frecency/tmp*
