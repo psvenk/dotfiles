@@ -36,7 +36,7 @@
 	url = https://github.com/jvoorhis/coq.vim.git
 [submodule ".config/vim/pack/mine/start/vim-expl3"]
 	path = .config/vim/pack/mine/start/vim-expl3
-	url = git@github.com:psvenk/vim-expl3.git
+	url = https://github.com/psvenk/vim-expl3.git
 [submodule ".config/vim/pack/mine/start/vim-perligata"]
 	path = .config/vim/pack/mine/start/vim-perligata
-	url = git@github.com:psvenk/vim-perligata.git
+	url = https://github.com/psvenk/vim-perligata.git
