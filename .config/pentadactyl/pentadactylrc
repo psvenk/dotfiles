@@ -18,10 +18,54 @@ set ff+='r'
 map -ex <C-n> tabnextvisible
 map -ex <C-p> tabpreviousvisible
 
-" Keep tab switching on the home row
-" (analogous to back/forward, and more Vim-like)
+" Use Qutebrowser bindings {{{
+
+" Tab switching
 map J <C-n>
 map K <C-p>
+map -ex -count T <count>tabnext
+map -builtin gt b
+
+" Hints
+" Open in new tab
+map -builtin F ;t
+" Open in new window
+map -builtin wf ;w
+
+" Open in foreground tab
+map -builtin ;f ;t
+" Open in background tab
+map -builtin ;b ;b
+" Populate :open prompt
+map -builtin ;o ;O
+" Populate :tabopen prompt
+map -builtin ;O ;T
+
+" o/O: open / open in new tab
+" go/gO: populate command line
+map -builtin O t
+map -builtin go O
+map -builtin gO T
+" Open in new window
+map -builtin wo w
+
+" Add new quickmark
+map -builtin m M
+" Add new bookmark (or remove bookmark)
+map -builtin M A
+" Load quickmark
+map -builtin b go
+" Load quickmark in new tab
+map -builtin B gn
+
+" Web inspector
+map -builtin wi <F12>
+
+map w <Nop>
+map t <Nop>
+map gT <Nop>
+
+" }}}
 
 " Disable <C-w> binding (switching windows in Vim)
 map <C-w> <Nop>
@@ -38,6 +82,7 @@ map -ex d tabclose
 " (workaround for <https://github.com/pentadactyl/pentadactyl/issues/16>)
 delcommand!
 
+" Wayback Machine {{{
 command wayback,wb -bang -nargs=? -complete=url -js
 	\ -description "Look up page in the Wayback Machine"
 	\ commands.execute(
@@ -53,7 +98,9 @@ command waybacksave,ws -bang -nargs=? -complete=url -js
 	\ 	+ "https://web.archive.org/save/"
 	\ 	+ (args.toString() || buffer.uri.spec)
 	\ )
+" }}}
 
+" Invidious {{{
 command invidious,inv -nargs * -complete=url -js
 	\ -description "View YouTube video on Invidious"
 	\ commands.execute(
@@ -61,16 +108,18 @@ command invidious,inv -nargs * -complete=url -js
 	\ 		"youtube.com", "invidio.us"
 	\	)
 	\ )
+" }}}
 
 " For some reason, running :rehash does not do this.
 command reloadconfig,rcfg -description "Reload config file"
-	\ source "~/.pentadactylrc"
+	\ source "~/.config/pentadactyl/pentadactylrc"
 
-" Disable and enable NoScript
+" Disable and enable NoScript {{{
 " (This is needed upon restarting Pale Moon for NoScript's banner to show up)
 command reloadnoscript,rns -description "Reload NoScript"
 	\ extdisable NoScript
 	\ extenable NoScript
+" }}}
 
 command newtab,nt -description "Open a new tab"
 	\ tabopen about:logopage
@@ -79,4 +128,4 @@ command Help,H -nargs * -complete help
 	\ -description "Open help in a new tab"
 	\ tab help <args>
 
-" vim: set ft=pentadactyl tw=80:
+" vim: set ft=pentadactyl tw=80 fdm=marker cms=\"\ %s:

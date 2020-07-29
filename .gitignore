@@ -26,6 +26,8 @@
 !/.config/nano
 !/.config/pentadactyl
 !/.config/qutebrowser
+/.config/qutebrowser/bookmarks
+/.config/qutebrowser/quickmarks
 !/.config/rofi
 !/.config/termite
 /.config/termite/*.config
