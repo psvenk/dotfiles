@@ -25,6 +25,7 @@
 !/.config/keepmenu
 !/.config/nano
 !/.config/pentadactyl
+!/.config/qutebrowser
 !/.config/rofi
 !/.config/termite
 /.config/termite/*.config
@@ -32,6 +33,13 @@
 !/.config/X11
 !/.config/zathura
 
+!/.local
+/.local/*
+!/.local/share
+/.local/share/*
 !/.local/share/rehome/
+!/.local/share/qutebrowser/
+/.local/share/qutebrowser/*
+!/.local/share/qutebrowser/greasemonkey
 
 __pycache__
