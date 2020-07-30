@@ -26,6 +26,10 @@ map K <C-p>
 map -ex -count T <count>tabnext
 map -builtin gt b
 
+" Search (not a default Qutebrowser binding)
+map -builtin so s
+map -builtin sO S
+
 " Hints
 " Open in new tab
 map -builtin F ;t
@@ -64,6 +68,8 @@ map -builtin wi <F12>
 map w <Nop>
 map t <Nop>
 map gT <Nop>
+map s <Nop>
+map S <Nop>
 
 " }}}
 

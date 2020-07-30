@@ -6,27 +6,6 @@
 
 config_version: 2
 settings:
-  aliases:
-    global:
-      h: help
-      q: close
-      qa: quit
-      w: session-save
-      wq: quit --save
-      wqa: quit --save
-  auto_save.session:
-    global: true
-  bindings.commands:
-    global:
-      normal:
-        tBH: config-cycle -p -u *://*.{url:host}/* content.host_blocking.enabled ;;
-          reload
-        tBh: config-cycle -p -u *://{url:host}/* content.host_blocking.enabled ;;
-          reload
-        tbH: config-cycle -p -t -u *://*.{url:host}/* content.host_blocking.enabled
-          ;; reload
-        tbh: config-cycle -p -t -u *://{url:host}/* content.host_blocking.enabled
-          ;; reload
   content.host_blocking.enabled:
     '*://github.com/*': false
   content.javascript.enabled:
@@ -35,32 +14,10 @@ settings:
     '*://duckduckgo.com/*': true
     '*://en.wikipedia.org/*': true
     '*://github.com/*': true
+    '*://gitlab.com/*': true
     '*://html.duckduckgo.com/*': false
     '*://twitter.com/*': true
     '*://www.reddit.com/*': true
     global: false
   content.notifications:
     https://www.reddit.com: false
-  content.pdfjs:
-    global: true
-  editor.command:
-    global:
-    - gvim
-    - -f
-    - '{file}'
-    - -c
-    - normal {line}G{column0}l
-  editor.encoding:
-    global: utf-8
-  fonts.completion.category:
-    global: bold default_size default_family
-  hints.auto_follow:
-    global: full-match
-  hints.mode:
-    global: number
-  tabs.new_position.unrelated:
-    global: next
-  tabs.position:
-    global: left
-  tabs.width:
-    global: 10%
