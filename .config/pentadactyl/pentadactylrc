@@ -97,12 +97,30 @@ command wayback,wb -bang -nargs=? -complete=url -js
 	\ 	+ (args.toString() || buffer.uri.spec)
 	\ )
 
-command waybacksave,ws -bang -nargs=? -complete=url -js
+command waybacksave,wbs -bang -nargs=? -complete=url -js
 	\ -description "Save page in the Wayback Machine"
 	\ commands.execute(
 	\ 	(bang ? "open " : "bg tabchildopen ")
 	\ 	+ "https://web.archive.org/save/"
 	\ 	+ (args.toString() || buffer.uri.spec)
+	\ )
+" }}}
+
+" archive.today {{{
+command archive,ar -bang -nargs=? -complete=url -js
+	\ -description "Look up page at archive.today"
+	\ commands.execute(
+	\ 	(bang ? "open " : "tabchildopen ")
+	\ 	+ "https://archive.today/"
+	\ 	+ encodeURIComponent(args.toString() || buffer.uri.spec)
+	\ )
+
+command archivesave,ars -bang -nargs=? -complete=url -js
+	\ -description "Save page at archive.today"
+	\ commands.execute(
+	\ 	(bang ? "open " : "bg tabchildopen ")
+	\ 	+ "https://archive.today/?run=1&url="
+	\ 	+ encodeURIComponent(args.toString() || buffer.uri.spec)
 	\ )
 " }}}
 

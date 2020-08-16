@@ -1,0 +1,44 @@
+#!/usr/bin/env python3
+#
+# Qutebrowser userscript for viewing YouTube videos in Invidious.
+#
+# Usage:
+#   :spawn -u invidious [-t|-b] [url]
+#
+# The -t (--tab) flag opens in a new tab, the -b (--bg) flag opens in a new
+# background tab, and the current page's URL is used if none is provided at the
+# command line.
+
+import sys
+import os
+import argparse
+
+parser = argparse.ArgumentParser(description=(
+        "Qutebrowser userscript for viewing YouTube videos in Invidious."))
+
+parser.add_argument("url", nargs="?", default=os.getenv("QUTE_URL"),
+                    help="The URL to lookup/save; defaults to the current URL")
+group = parser.add_mutually_exclusive_group()
+group.add_argument("-t", "--tab", dest="where", action="store_const",
+                   const="tab",
+                   help="Open in a new tab")
+group.add_argument("-b", "--bg", dest="where", action="store_const",
+                   const="bg",
+                   help="Open in a background tab")
+
+args = parser.parse_args()
+
+if not args.url:
+    print("Could not read Qutebrowser current URL and no URL at command line",
+          file=sys.stderr)
+    sys.exit(1)
+
+try:
+    with open(os.environ["QUTE_FIFO"], "w") as fifo:
+        flags = (" -tr" if args.where == "tab" else
+                 " -b"  if args.where == "bg"  else "")
+        url = args.url.replace("youtube.com", "invidio.us")
+        fifo.write(f"open{flags} {url}")
+except (KeyError, OSError):
+    print("Could not reach Qutebrowser", file=sys.stderr)
+    sys.exit(1)
