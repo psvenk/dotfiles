@@ -3,11 +3,11 @@
 This is mainly for my own organization, but my dotfiles are public in case they
 would be useful to anyone else.
 
-# Hard dependencies
+## Hard dependencies
 
 git, POSIX sh
 
-# Installing on a new system
+## Installing on a new system
 
 ```console
 $ git clone https://github.com/psvenk/dotfiles
