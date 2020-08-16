@@ -51,6 +51,8 @@ set ignorecase
 set smartcase
 " Fold based on syntax where possible
 set foldmethod=syntax
+" Use one space after a period, not two
+set nojoinspaces
 
 " Use space as Leader and LocalLeader
 let mapleader = ' '
