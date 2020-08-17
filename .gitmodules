@@ -40,3 +40,9 @@
 [submodule ".config/vim/pack/mine/start/vim-perligata"]
 	path = .config/vim/pack/mine/start/vim-perligata
 	url = https://github.com/psvenk/vim-perligata.git
+[submodule ".config/vim/pack/bundle/start/vim-SyntaxRange"]
+	path = .config/vim/pack/bundle/start/vim-SyntaxRange
+	url = https://github.com/inkarkat/vim-SyntaxRange.git
+[submodule ".config/vim/pack/bundle/start/vim-ingo-library"]
+	path = .config/vim/pack/bundle/start/vim-ingo-library
+	url = https://github.com/inkarkat/vim-ingo-library.git
