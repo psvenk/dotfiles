@@ -29,6 +29,7 @@
 /.config/qutebrowser/autoconfig.yml
 /.config/qutebrowser/bookmarks
 /.config/qutebrowser/quickmarks
+/.config/qutebrowser/qsettings
 !/.config/rofi
 !/.config/sage
 /.config/sage/cache

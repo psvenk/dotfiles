@@ -1,27 +1,15 @@
 # Qutebrowser config
 
+# Sessions
 c.auto_save.session = True
 c.session.lazy_restore = True
 
-# Add named search engine ddg for DuckDuckGo
-c.url.searchengines['ddg'] = c.url.searchengines['DEFAULT']
-
-c.url.auto_search = 'never'
-c.url.open_base_url = True
-
-# Bindings for controlling adblock whitelist {{{
-config.bind('tbh', 'config-cycle -p -t -u *://{url:host}/* content.host_blocking.enabled ;; reload')
-config.bind('tbH', 'config-cycle -p -t -u *://*.{url:host}/* content.host_blocking.enabled ;; reload')
-config.bind('tBh', 'config-cycle -p -u *://{url:host}/* content.host_blocking.enabled ;; reload')
-config.bind('tBH', 'config-cycle -p -u *://*.{url:host}/* content.host_blocking.enabled ;; reload')
-# }}}
-
-# Use vertical tabs
+# Tabs
 c.tabs.position = 'left'
 c.tabs.width = 200
 
-# Put new tabs near the current tab
 c.tabs.new_position.unrelated = 'next'
+c.tabs.background = True
 
 # Hints
 c.hints.mode = 'number'
@@ -41,9 +29,26 @@ c.content.headers.user_agent = (
 c.editor.command = ['xterm', '-e', 'vim', '{file}', '-c',
                     'normal {line}G{column0}l']
 
-# Add shortcuts for searching DuckDuckGo {{{
-config.bind('so', 'set-cmd-text -s :open ddg')
-config.bind('sO', 'set-cmd-text -s :open -t ddg')
+# Search {{{
+c.url.searchengines['ddg'] = c.url.searchengines['DEFAULT']
+
+c.url.auto_search = 'never'
+c.url.open_base_url = True
+
+config.bind('so', 'set-cmd-text -s :open -- ddg')
+config.bind('sO', 'set-cmd-text -s :open -t -- ddg')
+
+config.bind('spp', 'open -- ddg {clipboard}')
+config.bind('spP', 'open -- ddg {primary}')
+config.bind('sPp', 'open -t -- ddg {clipboard}')
+config.bind('sPP', 'open -t -- ddg {primary}')
+# }}}
+
+# Bindings for controlling adblock whitelist {{{
+config.bind('tbh', 'config-cycle -p -t -u *://{url:host}/* content.host_blocking.enabled ;; reload')
+config.bind('tbH', 'config-cycle -p -t -u *://*.{url:host}/* content.host_blocking.enabled ;; reload')
+config.bind('tBh', 'config-cycle -p -u *://{url:host}/* content.host_blocking.enabled ;; reload')
+config.bind('tBH', 'config-cycle -p -u *://*.{url:host}/* content.host_blocking.enabled ;; reload')
 # }}}
 
 # Aliases {{{
