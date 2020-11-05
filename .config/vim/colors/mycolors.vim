@@ -39,3 +39,16 @@ hi diffRemoved ctermfg=DarkRed guifg=red3
 hi Underlined guifg=DodgerBlue
 hi Title guifg=coral
 hi link markdownHeadingRule Title
+
+hi String guifg=LightGoldenrod
+hi Character guifg=gold3
+hi Number guifg=SandyBrown
+hi Boolean guifg=IndianRed2
+
+hi Identifier guifg=turquoise1
+hi Function guifg=DeepSkyBlue1
+
+hi Include guifg=#cf70ff
+hi StorageClass guifg=#6cda0b
+hi SpecialChar guifg=#ff7b00
+hi Delimiter guifg=#d2982d
