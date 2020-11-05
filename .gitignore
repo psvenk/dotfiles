@@ -30,6 +30,8 @@
 /.config/qutebrowser/bookmarks
 /.config/qutebrowser/quickmarks
 !/.config/rofi
+!/.config/sage
+/.config/sage/cache
 !/.config/termite
 /.config/termite/*.config
 !/.config/vim

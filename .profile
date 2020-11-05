@@ -69,6 +69,8 @@ export CARGO_HOME=$XDG_DATA_HOME/cargo
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 # ~/.asy/
 export ASYMPTOTE_HOME=$XDG_CONFIG_HOME/asymptote/
+# ~/.sage/
+export DOT_SAGE="$XDG_CONFIG_HOME"/sage
 # ~/.XCompose
 export XCOMPOSEFILE=$XDG_CONFIG_HOME/ibus/Compose
 # ~/.Xauthority
