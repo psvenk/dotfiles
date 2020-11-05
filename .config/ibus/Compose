@@ -58,4 +58,21 @@ include "%L"
 <Multi_key> <g> <q> <s> : "ς"    U03C2    # GREEK SMALL LETTER FINAL SIGMA
 <Multi_key> <g> <q> <x> : "ξ"    U03BE    # GREEK SMALL LETTER XI
 
-<Multi_key> <~> <=> : "≈" U2248 # ALMOST EQUAL TO
+# Mathematical symbols
+<Multi_key> <asciitilde> <equal>            : "≈" U2248  # ALMOST EQUAL TO
+<Multi_key> <s> <q> <r> <t>                 : "√" U221A  # SQUARE ROOT
+<Multi_key> <i> <n> <t>                     : "∫" U222B  # INTEGRAL
+<Multi_key> <s> <u> <m>                     : "∑" U2211  # N-ARY SUMMATION
+<Multi_key> <p> <r> <o> <d>                 : "∏" U220F  # N-ARY PRODUCT
+<Multi_key> <A> <A>                         : "∀" U2200  # FOR ALL
+<Multi_key> <E> <E>                         : "∃" U2203  # THERE EXISTS
+<Multi_key> <parenleft> <minus>             : "∈" U2208  # ELEMENT OF
+<Multi_key> <slash> <parenleft> <minus>     : "∉" U2209  # NOT AN ELEMENT OF
+<Multi_key> <minus> <parenright>            : "∋" U220B  # CONTAINS AS MEMBER
+<Multi_key> <bar> <bar>                     : "∥" U2225  # PARALLEL TO
+<Multi_key> <underscore> <bar> <underscore> : "⊥" U22A5  # UP TACK
+
+# Use GREEK SMALL LETTER MU and not MICRO SIGN
+<Multi_key> <m> <u> : "μ" U03BC # GREEK SMALL LETTER MU
+
+# vim: set ft=conf:
