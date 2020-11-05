@@ -1,4 +1,4 @@
-snippet begin "\begin{} / \end{}"
+snippet begin "\begin{} / \end{}" i
 \begin{$1}
 	$2
 \end{$1}
@@ -10,14 +10,18 @@ snippet "tab(ular)?" "tabular" r
 \end{$1}
 endsnippet
 
-snippet " "TeX double quotes"
+snippet " "TeX double quotes" i
 \`\`$1''
 endsnippet
 
-snippet ` "TeX single quotes"
+snippet ` "TeX single quotes" i
 \`$1'
 endsnippet
 
-snippet $ "TeX math mode"
+snippet $ "TeX math mode" i
 \$$1\$
+endsnippet
+
+snippet "v(ec)?" "Vector" ir
+\vec{$1}
 endsnippet
