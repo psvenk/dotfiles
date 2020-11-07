@@ -16,9 +16,6 @@
 [submodule ".vim/pack/bundle/start/vim-fugitive"]
 	path = .config/vim/pack/bundle/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
-[submodule ".vim/pack/lang/start/vim-polyglot"]
-	path = .config/vim/pack/lang/start/vim-polyglot
-	url = https://github.com/sheerun/vim-polyglot.git
 [submodule ".vim/pack/bundle/start/vim-commentary"]
 	path = .config/vim/pack/bundle/start/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
