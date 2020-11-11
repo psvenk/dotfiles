@@ -43,3 +43,6 @@
 [submodule ".config/vim/pack/bundle/start/vim-ingo-library"]
 	path = .config/vim/pack/bundle/start/vim-ingo-library
 	url = https://github.com/inkarkat/vim-ingo-library.git
+[submodule ".config/vim/pack/lang/start/vim-javascript"]
+	path = .config/vim/pack/lang/start/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git
