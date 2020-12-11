@@ -46,3 +46,12 @@
 [submodule ".config/vim/pack/lang/start/vim-javascript"]
 	path = .config/vim/pack/lang/start/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
+[submodule ".config/vim/pack/lang/start/ocp-indent-vim"]
+	path = .config/vim/pack/lang/start/ocp-indent-vim
+	url = https://github.com/let-def/ocp-indent-vim.git
+[submodule ".config/vim/pack/lang/start/typescript-vim"]
+	path = .config/vim/pack/lang/start/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim.git
+[submodule ".config/vim/pack/lang/start/vim-ocaml"]
+	path = .config/vim/pack/lang/start/vim-ocaml
+	url = https://github.com/ocaml/vim-ocaml.git
