@@ -12,6 +12,6 @@
 const currentURL = window.location.toString();
 const matches = currentURL.match(/(?:\w+\.)?twitter\.com/);
 if (matches) {
-	const newURL = currentURL.replace(matches[0], "www.nitter.net");
+	const newURL = currentURL.replace(matches[0], "nitter.net");
 	window.location.replace(newURL);
 }
