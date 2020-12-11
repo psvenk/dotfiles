@@ -75,4 +75,6 @@ include "%L"
 # Use GREEK SMALL LETTER MU and not MICRO SIGN
 <Multi_key> <m> <u> : "μ" U03BC # GREEK SMALL LETTER MU
 
+<Multi_key> <e> <l> <l> : "ℓ" U2113 # SCRIPT SMALL L
+
 # vim: set ft=conf:
