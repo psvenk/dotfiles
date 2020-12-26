@@ -150,9 +150,4 @@ if has("gui_running")
 endif
 "}}}
 
-augroup filetypes
-	au!
-	au BufNewFile,BufRead *.mbox set ft=mail
-augroup END
-
 " vim: fdm=marker
