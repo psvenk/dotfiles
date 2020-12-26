@@ -55,3 +55,6 @@
 [submodule ".config/vim/pack/lang/start/vim-ocaml"]
 	path = .config/vim/pack/lang/start/vim-ocaml
 	url = https://github.com/ocaml/vim-ocaml.git
+[submodule ".config/vim/pack/lang/start/kotlin-vim"]
+	path = .config/vim/pack/lang/start/kotlin-vim
+	url = https://github.com/udalov/kotlin-vim.git
