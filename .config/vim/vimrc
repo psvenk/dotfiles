@@ -9,8 +9,6 @@ let g:netrw_home = $XDG_CACHE_HOME.'/vim'
 
 " Enable syntax highlighting
 syntax on
-" Use my color scheme
-colorscheme mycolors
 " Show line numbers and highlight current line number
 set number
 set cursorline
@@ -32,6 +30,9 @@ elseif &term =~ 'alacritty\|st'
 	" Enable proper mouse support
 	set ttymouse=sgr
 endif
+
+" Use my color scheme
+colorscheme mycolors
 
 " Ensure that colors for dark background are used
 set background=dark
