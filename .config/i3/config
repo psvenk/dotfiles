@@ -29,7 +29,7 @@ pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3blocks
 # For resizing windows and dragging floating windows
 floating_modifier Mod4
 
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec alacritty
 
 bindsym $mod+Shift+q kill
 
