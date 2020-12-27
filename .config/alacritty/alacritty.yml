@@ -41,7 +41,4 @@ bell:
 
 live_config_reload: false
 
-# Seems like only libvte has proper support for multilingual input (the way I
-# want it)
-
 # vim: et ts=2 sw=2 tw=80
