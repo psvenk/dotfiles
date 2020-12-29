@@ -1,13 +1,4 @@
-#!/bin/bash
-
-newline_if_long_path() {
-	if [[ $(echo -n "$(pwd)" | wc -m) -gt 32 ]]
-	then
-		printf '\\n'
-	else
-		printf ' '
-	fi
-}
+#!/bin/sh
 
 orange="$(tput setaf 3)"
 cyan="$(tput setaf 6)"
@@ -15,8 +6,25 @@ green="$(tput setaf 2)"
 red="$(tput setaf 1)"
 reset="$(tput sgr0)"
 
-printf '%s\n' "[\[${orange}\]\u@\h\[${cyan}\] \
-\w\[${reset}\]]\
-$(if [[ $UID -ne 0 ]]; then
-echo "\[${green}\]"; else echo "\[${red}\]"; fi)\$\[${reset}\]\
-$(newline_if_long_path)"
+prompt="[\[${orange}\]\u@\h\[${cyan}\] \w\[${reset}\]]"
+
+if [ $UID -ne 0 ]
+then
+	prompt="${prompt}\[${green}\]"
+else
+	prompt="${prompt}\[${red}\]"
+fi
+
+prompt="${prompt}\$\[${reset}\]"
+printf '%s' "$prompt"
+
+# Print newline if path is long, acting as a heuristic for a long prompt.
+# This, of course, is not perfect; however, to get the length of the actual
+# prompt, we would need to preemptively substitute the username, hostname, etc.
+# into the $prompt, which may have performance issues.
+if [ ${#PWD} -gt 32 ]
+then
+	printf '%s' '\n'
+else
+	printf '%s' ' '
+fi
