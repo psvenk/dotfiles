@@ -6,14 +6,6 @@
 
 source ~/.profile
 
-# PS1='[\u@\h \W]\$ '
-
-newline_if_long_path() {
-	if [[ $(echo -n "$(pwd)" | wc -m) -gt 32 ]];
-	then printf "\\\n";
-	else printf " "; fi
-}
-
 # Allow 5000 history entries (instead of 500)
 export HISTSIZE=5000
 export HISTFILESIZE=5000
@@ -21,18 +13,11 @@ export HISTFILESIZE=5000
 # Append to history instead of overwriting
 shopt -s histappend
 
-PROMPT_COMMAND='
-ORANGE="$(tput setaf 3)" CYAN="$(tput setaf 6)" \
-GREEN="$(tput setaf 2)" RED="$(tput setaf 1)" RESET="$(tput sgr0)" \
-PS1="[\[${ORANGE}\]\u@\h\[${CYAN}\] \
-\w\[${RESET}\]]\
-$(if [[ $UID -ne 0 ]]; then
-echo "\[${GREEN}\]"; else echo "\[${RED}\]"; fi)\$\[${RESET}\]\
-$(newline_if_long_path)"'
+PROMPT_COMMAND='PS1="$(~/bin/make-prompt)"'
 
 case ${TERM} in
   xterm*|rxvt*|Eterm|aterm|kterm|gnome*|urxvt*|alacritty)
-    PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf "\033]0;%s@%s:%s\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"'
+    PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND ; }'printf "\033]0;%s@%s:%s\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"'
 
     ;;
   screen*)

@@ -1,0 +1,22 @@
+#!/bin/bash
+
+newline_if_long_path() {
+	if [[ $(echo -n "$(pwd)" | wc -m) -gt 32 ]]
+	then
+		printf '\\n'
+	else
+		printf ' '
+	fi
+}
+
+orange="$(tput setaf 3)"
+cyan="$(tput setaf 6)"
+green="$(tput setaf 2)"
+red="$(tput setaf 1)"
+reset="$(tput sgr0)"
+
+printf '%s\n' "[\[${orange}\]\u@\h\[${cyan}\] \
+\w\[${reset}\]]\
+$(if [[ $UID -ne 0 ]]; then
+echo "\[${green}\]"; else echo "\[${red}\]"; fi)\$\[${reset}\]\
+$(newline_if_long_path)"
