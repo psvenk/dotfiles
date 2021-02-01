@@ -46,7 +46,6 @@
 !/.local/share/rehome/
 !/.local/share/qutebrowser/
 /.local/share/qutebrowser/*
-!/.local/share/qutebrowser/greasemonkey
 !/.local/share/qutebrowser/userscripts
 
 __pycache__
