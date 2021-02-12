@@ -16,13 +16,12 @@ shopt -s histappend
 PROMPT_COMMAND='PS1="$(~/bin/make-prompt)"'
 
 case ${TERM} in
-  xterm*|rxvt*|Eterm|aterm|kterm|gnome*|urxvt*|alacritty)
-    PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND ; }'printf "\033]0;%s@%s:%s\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"'
-
-    ;;
-  screen*)
-    PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf "\033_%s@%s:%s\033\\" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"'
-    ;;
+xterm*|rxvt*|Eterm|aterm|kterm|gnome*|urxvt*|alacritty)
+	PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND ; }'printf "\033]0;%s@%s:%s\007" "${USER}" "$(hostname)" "${PWD/#$HOME/\~}"'
+	;;
+screen*)
+	PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf "\033_%s@%s:%s\033\\" "${USER}" "$(hostname)" "${PWD/#$HOME/\~}"'
+	;;
 esac
 # from /etc/bash.bashrc
 
@@ -39,22 +38,22 @@ alias update-submodules="git submodule update --recursive --remote"
 # https://stackoverflow.com/questions/1030169/easy-way-to-pull-latest-of-all-git-submodules
 
 docker-removecontainers() {
-    echo 'Run this command as root'
-    # docker stop $(docker ps -aq)
-    # docker rm $(docker ps -aq)
+	echo 'Run this command as root'
+	# docker stop $(docker ps -aq)
+	# docker rm $(docker ps -aq)
 }
 
 docker-armageddon() {
-    echo 'Run this command as root'
-    # removecontainers
-    # docker network prune -f
-    # docker rmi -f $(docker images --filter dangling=true -qa)
-    # docker volume rm $(docker volume ls --filter dangling=true -q)
-    # docker rmi -f $(docker images -qa)
+	echo 'Run this command as root'
+	# removecontainers
+	# docker network prune -f
+	# docker rmi -f $(docker images --filter dangling=true -qa)
+	# docker volume rm $(docker volume ls --filter dangling=true -q)
+	# docker rmi -f $(docker images -qa)
 }
 
 # https://stackoverflow.com/a/42116347/
 
 init-nvm() {
-    source /usr/share/nvm/init-nvm.sh
+	source /usr/share/nvm/init-nvm.sh
 }
