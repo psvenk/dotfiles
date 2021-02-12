@@ -54,6 +54,8 @@ set smartcase
 set foldmethod=syntax
 " Use one space after a period, not two
 set nojoinspaces
+" Disable conceal (some filetype plugins enable it)
+set conceallevel=0
 
 " Use space as Leader and LocalLeader
 let mapleader = ' '
@@ -139,7 +141,7 @@ let g:UltiSnipsEditSplit = 'context'
 let g:markdown_fenced_languages = ['latex=tex', 'sh', 'console=sh']
 
 " Basic settings to make it easier to use GVim if needed {{{
-if has("gui_running")
+if has('gui_running')
 	" Disable cursor blinking
 	set guicursor=a:blinkon0
 
