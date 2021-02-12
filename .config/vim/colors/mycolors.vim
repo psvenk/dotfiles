@@ -1,5 +1,5 @@
 hi clear
-if exists("syntax_on")
+if exists('syntax_on')
 	syntax reset
 endif
 
@@ -37,12 +37,12 @@ hi diffRemoved ctermfg=DarkRed guifg=red3
 
 " Better colors for Markdown
 hi link markdownHeadingRule Title
-if &termguicolors
+if &termguicolors || has('gui_running')
 	hi Underlined guifg=DodgerBlue
 	hi Title guifg=coral
 endif
 
-if &termguicolors
+if &termguicolors || has('gui_running')
 	hi String guifg=LightGoldenrod
 	hi Character guifg=gold3
 	hi Number guifg=SandyBrown
