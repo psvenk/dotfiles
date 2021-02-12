@@ -61,3 +61,6 @@
 [submodule ".config/vim/pack/lang/start/vim-pandoc-syntax"]
 	path = .config/vim/pack/lang/start/vim-pandoc-syntax
 	url = https://github.com/vim-pandoc/vim-pandoc-syntax
+[submodule ".config/vim/pack/lang/start/vim-toml"]
+	path = .config/vim/pack/lang/start/vim-toml
+	url = https://github.com/cespare/vim-toml.git
