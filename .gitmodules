@@ -58,3 +58,6 @@
 [submodule ".config/vim/pack/lang/start/kotlin-vim"]
 	path = .config/vim/pack/lang/start/kotlin-vim
 	url = https://github.com/udalov/kotlin-vim.git
+[submodule ".config/vim/pack/lang/start/vim-pandoc-syntax"]
+	path = .config/vim/pack/lang/start/vim-pandoc-syntax
+	url = https://github.com/vim-pandoc/vim-pandoc-syntax
