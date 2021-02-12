@@ -35,7 +35,10 @@ do
 	then
 		makepkg --printsrcinfo > .SRCINFO
 	fi
-	makedeps="$makedeps $(grep makedepends .SRCINFO | sed 's/.*= //')"
+	makedeps="$makedeps $(\
+		grep makedepends .SRCINFO \
+		| sed -e's/.* = //' -e's/[<=>]\{1,2\}[0-9.]\+//'\
+	)"
 done
 
 # Put each make dependency on its own line, remove duplicates and blank lines,

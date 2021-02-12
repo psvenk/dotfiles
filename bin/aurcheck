@@ -2,7 +2,9 @@
 for dir in ~/src/aur/*
 do
 	pkg="$(basename "$dir")"
-	if [ "$pkg" = "mine" ] || [ "$pkg" = "not-installed" ]
+	if [ "$pkg" = "mine" ] || [ "$pkg" = "not-installed" ] || \
+		[ "$pkg" = "mathematica" ]
+	# I cannot update Mathematica without a license for the new version
 	then
 		continue
 	fi
