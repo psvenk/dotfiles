@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name Twitter to Nitter redirect
-// @description Redirect twitter.com to nitter.eu
+// @description Redirect twitter.com to a Nitter instance
 // @namespace psvenk
-// @version 0.3
+// @version 0.4
 // @match *://*.twitter.com/*
 // @author psvenk
 // @run-at document-start
@@ -13,6 +13,6 @@
 const currentURL = window.location.toString();
 const matches = currentURL.match(/(?:\w+\.)?twitter\.com/);
 if (matches) {
-	const newURL = currentURL.replace(matches[0], "nitter.snopyta.org");
+	const newURL = currentURL.replace(matches[0], "nitter.tedomum.net");
 	window.location.replace(newURL);
 }
