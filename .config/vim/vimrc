@@ -61,9 +61,6 @@ set conceallevel=0
 let mapleader = ' '
 let maplocalleader = ' '
 
-" Interpret .tex files as LaTeX by default
-let g:tex_flavor='latex'
-
 map <Leader>h
 	\ :echo "hi<"
 	\ . synIDattr(synID(line("."), col("."), 1), "name") . '> trans<'
