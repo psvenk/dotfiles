@@ -56,3 +56,26 @@ if &termguicolors || has('gui_running')
 	hi SpecialChar guifg=#ff7b00
 	hi Delimiter guifg=#d2982d
 endif
+
+" Use my color scheme for the Vim terminal (:term)
+if &termguicolors || has('gui_running')
+	hi Terminal guifg=#e9ebeb guibg=#2a2a2a
+	let g:terminal_ansi_colors = [
+		\ '#000000',
+		\ '#c23621',
+		\ '#25bc24',
+		\ '#adad27',
+		\ '#492de1',
+		\ '#d338d3',
+		\ '#33bbc8',
+		\ '#cbcccd',
+		\ '#818383',
+		\ '#fc391f',
+		\ '#31e722',
+		\ '#eaec23',
+		\ '#5833ff',
+		\ '#f935f8',
+		\ '#14f0f0',
+		\ '#e9ebeb',
+		\ ]
+endif
