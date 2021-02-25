@@ -17,6 +17,9 @@ c.hints.auto_follow = 'full-match'
 
 c.content.pdfjs = True
 
+c.content.javascript.enabled = False
+c.content.javascript.can_access_clipboard = True
+
 # Use user agent of upstream browser (Chromium) {{{
 # to reduce fingerprinting and compatibility issues
 c.content.headers.user_agent = (
