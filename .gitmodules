@@ -64,3 +64,6 @@
 [submodule ".config/vim/pack/lang/start/vim-toml"]
 	path = .config/vim/pack/lang/start/vim-toml
 	url = https://github.com/cespare/vim-toml.git
+[submodule ".config/vim/pack/bundle/start/vim-matchup"]
+	path = .config/vim/pack/bundle/start/vim-matchup
+	url = https://github.com/psvenk/vim-matchup.git

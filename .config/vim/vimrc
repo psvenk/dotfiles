@@ -104,9 +104,6 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 " Allow filetype-specific plugins and indenting
 filetype plugin indent on
 
-" Improved detection of pairs with %
-packadd! matchit
-
 " vim-sandwich {{{
 
 " Use vim-surround keymappings
