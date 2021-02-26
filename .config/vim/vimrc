@@ -31,11 +31,11 @@ elseif &term =~ 'alacritty\|st'
 	set ttymouse=sgr
 endif
 
-" Use my color scheme
-colorscheme mycolors
-
 " Ensure that colors for dark background are used
 set background=dark
+
+" Use my color scheme
+colorscheme mycolors
 
 " Enable mouse support
 set mouse=a

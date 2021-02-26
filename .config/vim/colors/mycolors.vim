@@ -48,7 +48,7 @@ if &termguicolors || has('gui_running')
 	hi Number guifg=SandyBrown
 	hi Boolean guifg=IndianRed2
 
-	hi Identifier guifg=turquoise1
+	hi Identifier guifg=turquoise1 cterm=NONE
 	hi Function guifg=DeepSkyBlue1
 
 	hi Include guifg=#cf70ff
