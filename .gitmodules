@@ -66,7 +66,7 @@
 	url = https://github.com/cespare/vim-toml.git
 [submodule ".config/vim/pack/bundle/start/vim-matchup"]
 	path = .config/vim/pack/bundle/start/vim-matchup
-	url = https://github.com/psvenk/vim-matchup.git
+	url = https://github.com/andymass/vim-matchup.git
 [submodule ".config/vim/pack/lang/start/vim-cpp-enhanced-highlight"]
 	path = .config/vim/pack/lang/start/vim-cpp-enhanced-highlight
 	url = https://github.com/octol/vim-cpp-enhanced-highlight.git
