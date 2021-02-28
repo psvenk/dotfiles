@@ -8,7 +8,7 @@ reset="$(tput sgr0)"
 
 prompt="[\[${orange}\]\u@\h\[${cyan}\] \w\[${reset}\]]"
 
-if [ $UID -ne 0 ]
+if [ $(id -ru) -ne 0 ]
 then
 	prompt="${prompt}\[${green}\]"
 else
