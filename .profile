@@ -5,7 +5,7 @@
 if [ -z "$PATHSET" ]
 then
 	export PATHSET=1
-	export PATH=~/bin:~/bin/rehome:~/perl5/bin:~/.cargo/bin:~/.gem/ruby/2.7.0/bin:$PATH
+	export PATH=~/bin:~/bin/rehome:~/perl5/bin:~/.cargo/bin:~/.gem/ruby/2.7.0/bin:"$PATH"
 fi
 # }}}1
 
@@ -40,7 +40,7 @@ export XDG_CACHE_HOME=~/.cache
 # }}}1
 
 # Export XDG user directories {{{1
-. $XDG_CONFIG_HOME/user-dirs.dirs
+. "$XDG_CONFIG_HOME"/user-dirs.dirs
 export XDG_DESKTOP_DIR
 export XDG_DOWNLOAD_DIR
 export XDG_TEMPLATES_DIR
@@ -53,44 +53,53 @@ export XDG_VIDEOS_DIR
 
 # Make misbehaving programs put their configuration and data files in {{{1
 # XDG directories
-# Environment variables {{{2
-# ~/.bash_history/
-export HISTFILE=$XDG_DATA_HOME/bash/history
-# ~/.node_repl_history/
-export NODE_REPL_HISTORY=$XDG_DATA_HOME/node/repl_history
-# ~/.octave_hist/
-export OCTAVE_HISTFILE=$XDG_DATA_HOME/octave/history
 
-# ~/.nvm/
-export NVM_DIR=$XDG_DATA_HOME/nvm
-# ~/.cargo/
-export CARGO_HOME=$XDG_DATA_HOME/cargo
-# ~/.npmrc and ~/.npm/ (set in npmrc)
-export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
+# Environment variables {{{2
+
 # ~/.asy/
-export ASYMPTOTE_HOME=$XDG_CONFIG_HOME/asymptote/
+export ASYMPTOTE_HOME="$XDG_CONFIG_HOME"/asymptote/
+# ~/.cargo/
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
+# ~/go/
+export GOPATH="$XDG_DATA_HOME"/go
+# ~/.ipython/
+export IPYTHONDIR="$XDG_CONFIG_HOME"/ipython
+# ~/.nvm/
+export NVM_DIR="$XDG_DATA_HOME"/nvm
+# ~/.npmrc and ~/.npm/ (set in npmrc)
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
 # ~/.sage/
 export DOT_SAGE="$XDG_CONFIG_HOME"/sage
 # ~/.XCompose
-export XCOMPOSEFILE=$XDG_CONFIG_HOME/ibus/Compose
+export XCOMPOSEFILE="$XDG_CONFIG_HOME"/ibus/Compose
 # ~/.Xauthority
-export XAUTHORITY=$XDG_DATA_HOME/X11/Xauthority
+export XAUTHORITY="$XDG_DATA_HOME"/X11/Xauthority
 # ~/.xinitrc
-export XINITRC=$XDG_CONFIG_HOME/X11/xinitrc
+export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
+
+# ~/.bash_history/
+export HISTFILE="$XDG_DATA_HOME"/bash/history
+# ~/.node_repl_history/
+export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node/repl_history
+# ~/.octave_hist/
+export OCTAVE_HISTFILE="$XDG_DATA_HOME"/octave/history
 
 # ~/.vimrc and ~/.vim/ (set in vimrc)
-export MYVIMRC=$XDG_CONFIG_HOME/vim/vimrc
+export MYVIMRC="$XDG_CONFIG_HOME"/vim/vimrc
 export VIMINIT='source $MYVIMRC'
 # ~/.pentadactylrc and ~/.pentadactyl/
-export PENTADACTYL_RUNTIME=$XDG_CONFIG_HOME/pentadactyl
-export MY_PENTADACTYLRC=$XDG_CONFIG_HOME/pentadactyl/pentadactylrc
+export PENTADACTYL_RUNTIME="$XDG_CONFIG_HOME"/pentadactyl
+export MY_PENTADACTYLRC="$XDG_CONFIG_HOME"/pentadactyl/pentadactylrc
 export PENTADACTYL_INIT=':source $MY_PENTADACTYLRC'
 # }}}2
 
 # Aliases {{{2
+
 # ~/.xinitrc
 alias startx='startx $XINITRC'
+
 # }}}2
+
 # }}}1
 
 # ~/.lesshst
@@ -108,10 +117,10 @@ alias diff='diff --color=auto'
 # Make sure ~/.xsession-errors points to /dev/null {{{1
 # so that it does not grow to a huge size
 # https://www.daniloaz.com/en/how-to-prevent-the-xsession-errors-file-from-growing-to-huge-size/
-if [ ! -L $HOME/.xsession-errors ]
+if [ ! -L "$HOME"/.xsession-errors ]
 then
-	rm -f $HOME/.xsession-errors
-	ln -s /dev/null $HOME/.xsession-errors
+	rm -f "$HOME"/.xsession-errors
+	ln -s /dev/null "$HOME"/.xsession-errors
 fi
 # }}}1
 
