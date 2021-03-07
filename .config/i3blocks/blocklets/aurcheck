@@ -1,5 +1,5 @@
-#!/bin/sh
-# Copyright 2020 psvenk
+#!/usr/bin/env perl
+# Copyright 2021 psvenk
 
 # Permission to use, copy, modify, and/or distribute this software for any
 # purpose with or without fee is hereby granted, provided that the above
@@ -13,31 +13,31 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-pkgs="$(pacman -Qm | aur vercmp | grep -vf "$XDG_CONFIG_HOME"/aurcheck/ignore)"
-numpkgs="$(printf "%s\n" "$pkgs" | wc -l)"
+use strict;
+use warnings;
+use 5.032;
 
-if [ -z "$pkgs" ]
-then
-	echo "AUR: up to date"
-	echo "AUR: 0"
-	echo "#00ff00"
-	if [ -n "$BLOCK_BUTTON" ]
-	then
-		notify-send -i "system-software-update" "AUR updates" \
-		"All up to date"
-	fi
-	exit
-elif [ "$numpkgs" -eq 1 ]
-then
-	printf "AUR: 1 update\n"
-	printf "AUR: 1\n"
-else
-	printf "AUR: %d updates\n" "$numpkgs"
-	printf "AUR: %d\n" "$numpkgs"
-fi
+chomp (my @pkgs = `$ENV{HOME}/bin/aurcheck`);
 
-printf "#ff8000\n"
-if [ -n "$BLOCK_BUTTON" ]
-then
-	notify-send -i "system-software-update" "AUR updates" "$pkgs"
-fi
+unless (@pkgs) {
+	print "AUR: up to date\n";
+	print "AUR: 0\n";
+	print "#00ff00\n";
+	system('notify-send', '-i', 'system-software-update', 'AUR updates',
+		'All up to date'
+	) if defined $ENV{BLOCK_BUTTON};
+	exit;
+}
+
+if (@pkgs == 1) {
+	print "AUR: 1 update\n";
+	print "AUR: 1\n";
+} else {
+	print "AUR: " . @pkgs . " updates\n";
+	print "AUR: " . @pkgs . "\n";
+}
+
+print "#ff8000\n";
+system('notify-send', '-i', 'system-software-update', 'AUR updates',
+	join("\n", @pkgs)
+) if defined $ENV{BLOCK_BUTTON};

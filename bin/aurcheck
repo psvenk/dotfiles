@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Get list of packages explicitly ignored in ~/.config/aurcheck/ignore
+configfile="${XDG_CONFIG_HOME:-$HOME/.config}/aurcheck/ignore"
+# Get list of packages ignored in /etc/pacman.conf
+ignored="$(pacman-conf | sed -n '/^IgnorePkg/p' | sed 's/^IgnorePkg\s*=\s*//')"
+
+pacman -Qm | aur vercmp | grep -vf "$configfile" | grep -v "$ignored"
