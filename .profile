@@ -64,6 +64,10 @@ export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export GOPATH="$XDG_DATA_HOME"/go
 # ~/.ipython/
 export IPYTHONDIR="$XDG_CONFIG_HOME"/ipython
+# ~/.Mathematica/
+export MATHEMATICA_USERBASE="$XDG_DATA_HOME"/mathematica
+# ~/.meteor/
+export METEOR_WAREHOUSE_DIR="$XDG_DATA_HOME"/meteor
 # ~/.nvm/
 export NVM_DIR="$XDG_DATA_HOME"/nvm
 # ~/.npmrc and ~/.npm/ (set in npmrc)
