@@ -56,8 +56,6 @@ set foldmethod=syntax
 set nojoinspaces
 " Disable conceal (some filetype plugins enable it)
 set conceallevel=0
-" Do not indent cases in C switch statements
-set cino=:0
 
 " Use space as Leader and LocalLeader
 let mapleader = ' '
