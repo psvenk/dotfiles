@@ -1,3 +1,5 @@
+priority 1
+
 snippet begin "\begin{} / \end{}" i
 \begin{$1}
 	$2
@@ -22,8 +24,16 @@ snippet $ "TeX math mode" i
 \$$1\$
 endsnippet
 
+snippet \[ "LaTeX display math" i
+\[$1\]
+endsnippet
+
 snippet "v(ec)?" "Vector" ir
 \vec{$1}
+endsnippet
+
+snippet / "Fraction" i
+\frac{$1}{$2}
 endsnippet
 
 # Greek letters - using same scheme as in $XCOMPOSEFILE {{{1
