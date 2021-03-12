@@ -18,6 +18,7 @@ export QT_IM_MODULE=ibus
 # Preferred programs {{{1
 export EDITOR=vim
 export BROWSER=palemoon
+export MANPAGER='vim -M +MANPAGER +"setl nonumber" -'
 # }}}1
 
 # Disable gnome-keyring graphical SSH password prompts

@@ -104,6 +104,11 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 " Allow filetype-specific plugins and indenting
 filetype plugin indent on
 
+" Enable man.vim and use it for 'K' keybind
+runtime ftplugin/man.vim
+set keywordprg=:Man
+let g:ft_man_folding_enable = 1
+
 " vim-sandwich {{{
 
 " Use vim-surround keymappings
