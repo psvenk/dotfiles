@@ -110,14 +110,6 @@ alias startx='startx $XINITRC'
 # less(1) does not need a history file.
 export LESSHISTFILE=-
 
-# Use vi/less keybindings for GNU Info
-alias info='info --vi-keys'
-
-# Enable colors for certain commands
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
-alias diff='diff --color=auto'
-
 # Make sure ~/.xsession-errors points to /dev/null {{{1
 # so that it does not grow to a huge size
 # https://www.daniloaz.com/en/how-to-prevent-the-xsession-errors-file-from-growing-to-huge-size/

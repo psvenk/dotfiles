@@ -10,6 +10,14 @@ source ~/.profile
 export HISTSIZE=5000
 export HISTFILESIZE=5000
 
+# Use vi/less keybindings for GNU Info
+alias info='info --vi-keys'
+
+# Enable colors for certain commands
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias diff='diff --color=auto'
+
 # Append to history instead of overwriting
 shopt -s histappend
 
