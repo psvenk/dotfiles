@@ -36,6 +36,26 @@ snippet / "Fraction" i
 \frac{$1}{$2}
 endsnippet
 
+# Delimiters
+snippet lr "left right" i
+\\left$1 $2 \\right$1
+endsnippet
+
+snippet lr( "left( right)" i
+\\left( $1 \\right)
+endsnippet
+
+snippet lr[ "\left[ \right]" i
+endsnippet
+
+snippet lr{ "left\{ right\}" i
+\\left\\{ $1 \\right\\}
+endsnippet
+
+snippet lra "langle rangle" i
+\\langle $1 \\rangle
+endsnippet
+
 # Greek letters - using same scheme as in $XCOMPOSEFILE {{{1
 # (excluding those that look like roman letters and do not have TeX commands)
 # Lowercase letters {{{2
