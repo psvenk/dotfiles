@@ -2,9 +2,9 @@
 
 use strict;
 use warnings;
-use 5.032;
+use 5.010;
 
-my $configdir = $ENV{XDG_CONFIG_HOME} || "$ENV{HOME}/.config";
+my $configdir = $ENV{XDG_CONFIG_HOME} // "$ENV{HOME}/.config";
 
 # Get a hash of ignored packages {{{
 
@@ -27,7 +27,7 @@ my %ignored = map {$_ => 1} (@cfgignored, @pacmanignored);
 for (`pacman -Qm | aur vercmp`) {
 	chomp;
 	my ($pkg) = split /:/;
-	print if not $ignored{$pkg};
+	say if not $ignored{$pkg};
 }
 # }}}
 
@@ -55,7 +55,7 @@ for (`aur srcver @{[(join ' ', @names)]} 2>/dev/null`) {
 	my ($pkg, $newver) = split;
 	my $ver = $vers{$pkg};
 	if (`vercmp $newver $ver` > 0) {
-		print "$pkg: $ver -> $newver\n";
+		say "$pkg: $ver -> $newver";
 	}
 }
 

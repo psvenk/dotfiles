@@ -15,14 +15,14 @@
 
 use strict;
 use warnings;
-use 5.032;
+use 5.010;
 
 chomp (my @pkgs = `$ENV{HOME}/bin/aurcheck`);
 
 unless (@pkgs) {
-	print "AUR: up to date\n";
-	print "AUR: 0\n";
-	print "#00ff00\n";
+	say "AUR: up to date";
+	say "AUR: 0";
+	say "#00ff00";
 	system('notify-send', '-i', 'system-software-update', 'AUR updates',
 		'All up to date'
 	) if defined $ENV{BLOCK_BUTTON};
@@ -30,11 +30,11 @@ unless (@pkgs) {
 }
 
 if (@pkgs == 1) {
-	print "AUR: 1 update\n";
-	print "AUR: 1\n";
+	say "AUR: 1 update";
+	say "AUR: 1";
 } else {
-	print "AUR: " . @pkgs . " updates\n";
-	print "AUR: " . @pkgs . "\n";
+	say "AUR: " . @pkgs . " updates";
+	say "AUR: " . @pkgs;
 }
 
 print "#ff8000\n";
