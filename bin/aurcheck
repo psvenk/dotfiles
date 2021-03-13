@@ -1,8 +1,64 @@
-#!/bin/sh
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+use 5.032;
+
+my $configdir = $ENV{XDG_CONFIG_HOME} || "$ENV{HOME}/.config";
+
+# Get a hash of ignored packages {{{
 
 # Get list of packages explicitly ignored in ~/.config/aurcheck/ignore
-configfile="${XDG_CONFIG_HOME:-$HOME/.config}/aurcheck/ignore"
-# Get list of packages ignored in /etc/pacman.conf
-ignored="$(pacman-conf | sed -n '/^IgnorePkg/p' | sed 's/^IgnorePkg\s*=\s*//')"
+open(my $fh, '<', "$configdir/aurcheck/ignore")
+	or die "Could not read config file\n";
+chomp (my @cfgignored = <$fh>);
+close $fh;
 
-pacman -Qm | aur vercmp | grep -vf "$configfile" | grep -v "$ignored"
+# Get list of packages ignored in /etc/pacman.conf
+chomp (my @pacmanignored = grep {/^IgnorePkg/} `pacman-conf`);
+@pacmanignored = map {$_ =~ s/^IgnorePkg\s*=\s*//; $_} @pacmanignored;
+
+# Merge two arrays and turn them into a hash
+my %ignored = map {$_ => 1} (@cfgignored, @pacmanignored);
+
+# }}}
+
+# Non-VCS packages {{{
+for (`pacman -Qm | aur vercmp`) {
+	chomp;
+	my ($pkg) = split /:/;
+	print if not $ignored{$pkg};
+}
+# }}}
+
+# VCS packages {{{
+
+# Get list of VCS packages
+chomp (my @pkgs = grep {/-(bzr|cvs|darcs|git|hg|svn)/} `pacman -Q`);
+
+# Take only packages that are not ignored and that have source trees cloned
+# under ~/src/aur/
+chdir "$ENV{HOME}/src/aur";
+@pkgs = grep {
+	my ($pkg, $ver) = split;
+	!$ignored{$pkg} and -d $pkg
+} @pkgs;
+
+my %vers = map {
+	my ($pkg, $ver) = split;
+	$pkg => $ver
+} @pkgs;
+my @names = keys %vers;
+
+for (`aur srcver @{[(join ' ', @names)]} 2>/dev/null`) {
+	chomp;
+	my ($pkg, $newver) = split;
+	my $ver = $vers{$pkg};
+	if (`vercmp $newver $ver` > 0) {
+		print "$pkg: $ver -> $newver\n";
+	}
+}
+
+# }}}
+
+# vim: set fdm=marker:
