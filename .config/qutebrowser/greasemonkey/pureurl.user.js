@@ -2,13 +2,14 @@
 // @name          Pure URL userscript
 // @description   Strip unwanted URL parameters (to prevent tracking)
 // @namespace     psvenk
-// @version       0.1
+// @version       0.2
 // @include       http://*
 // @include       https://*
 // @author        psvenk
 // @license       ISC
 // @run-at        document-start
 // @qute-js-world user
+// @grant         none
 // ==/UserScript==
 
 /**
@@ -123,6 +124,7 @@ region@nytimes.com
 req_id@nytimes.com
 state@nytimes.com
 surface@nytimes.com
+variant@nytimes.com
 ch@quora.com
 share@quora.com
 itid@washingtonpost.com
