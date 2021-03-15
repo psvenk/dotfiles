@@ -36,29 +36,31 @@ snippet / "Fraction" i
 \frac{$1}{$2}
 endsnippet
 
-# Delimiters
+# Delimiters {{{
 snippet lr "left right" i
-\\left$1 $2 \\right$1
+\left$1 $2 \right$1
 endsnippet
 
 snippet lr( "left( right)" i
-\\left( $1 \\right)
+\left( $1 \right)
 endsnippet
 
 snippet lr[ "\left[ \right]" i
 endsnippet
 
 snippet lr{ "left\{ right\}" i
-\\left\\{ $1 \\right\\}
+\left\\{ $1 \right\\}
 endsnippet
 
 snippet lra "langle rangle" i
-\\langle $1 \\rangle
+\langle $1 \rangle
 endsnippet
+# }}}
 
-# Greek letters - using same scheme as in $XCOMPOSEFILE {{{1
+# Symbols {{{
+# Greek letters - using same scheme as in $XCOMPOSEFILE {{{
 # (excluding those that look like roman letters and do not have TeX commands)
-# Lowercase letters {{{2
+# Lowercase letters {{{
 snippet ga "α" i
 \alpha
 endsnippet
@@ -137,8 +139,8 @@ endsnippet
 snippet gqx "ξ" i
 \xi
 endsnippet
-# }}}2
-# Uppercase letters {{{2
+# }}}
+# Uppercase letters {{{
 snippet GG "Γ" i
 \Gamma
 endsnippet
@@ -172,7 +174,13 @@ endsnippet
 snippet GQP "Ψ" i
 \Psi
 endsnippet
-# }}}2
-# }}}1
+# }}}
+# }}}
 
-# vim: set fdm=marker fdl=1:
+snippet bb "mathbb" i
+\mathbb{$1}
+endsnippet
+
+# }}}
+
+# vim: set fdm=marker fdl=0:
