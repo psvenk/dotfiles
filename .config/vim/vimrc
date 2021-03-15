@@ -108,6 +108,7 @@ filetype plugin indent on
 runtime ftplugin/man.vim
 set keywordprg=:Man
 let g:ft_man_folding_enable = 1
+let g:no_man_maps = 1
 
 " vim-sandwich {{{
 

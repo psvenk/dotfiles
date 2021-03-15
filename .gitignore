@@ -37,6 +37,7 @@
 !/.config/termite
 /.config/termite/*.config
 !/.config/vim
+/.config/vim/spell
 !/.config/X11
 !/.config/zathura
 

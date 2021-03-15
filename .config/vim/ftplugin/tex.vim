@@ -7,6 +7,8 @@ let g:vimtex_imaps_enabled = 0
 
 " Enable folding
 let g:vimtex_fold_enabled = 1
+" Use manual folding (foldexpr is quite slow on files of medium to large size)
+let g:vimtex_fold_manual = 1
 
 " Add aliases for Wolfram Language nested syntax highlighting
 let g:vimtex_syntax_nested = {
