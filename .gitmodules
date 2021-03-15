@@ -76,3 +76,6 @@
 [submodule ".config/vim/pack/lang/start/vim-coffee-script"]
 	path = .config/vim/pack/lang/start/vim-coffee-script
 	url = https://github.com/kchmck/vim-coffee-script.git
+[submodule ".config/vim/pack/bundle/start/FastFold"]
+	path = .config/vim/pack/bundle/start/FastFold
+	url = https://github.com/Konfekt/FastFold.git
