@@ -12,6 +12,8 @@ syntax on
 " Show line numbers and highlight current line number
 set number
 set cursorline
+" Enable modelines, including on Debian
+set modeline
 
 " Change cursor shape in insert and replace modes
 if &term =~ 'xterm\|rxvt-unicode\|alacritty\|st'
@@ -60,6 +62,7 @@ set conceallevel=0
 " Use space as Leader and LocalLeader
 let mapleader = ' '
 let maplocalleader = ' '
+nnoremap <Space> <Nop>
 
 map <Leader>h
 	\ :echo "hi<"

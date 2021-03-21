@@ -1,5 +1,7 @@
 priority 1
 
+# General {{{
+
 snippet begin "\begin{} / \end{}" i
 \begin{$1}
 	$2
@@ -25,7 +27,7 @@ snippet $ "TeX math mode" i
 endsnippet
 
 snippet \[ "LaTeX display math" i
-\[$1\]
+\[ $1 \]
 endsnippet
 
 snippet "v(ec)?" "Vector" ir
@@ -36,9 +38,15 @@ snippet / "Fraction" i
 \frac{$1}{$2}
 endsnippet
 
+# }}}
+
 # Delimiters {{{
 snippet lr "left right" i
 \left$1 $2 \right$1
+endsnippet
+
+snippet llrr "left l_ right r_" i
+\left\l$1 $2 \right\r$1
 endsnippet
 
 snippet lr( "left( right)" i
@@ -46,6 +54,7 @@ snippet lr( "left( right)" i
 endsnippet
 
 snippet lr[ "\left[ \right]" i
+\left[ $1 \right]
 endsnippet
 
 snippet lr{ "left\{ right\}" i
@@ -54,6 +63,18 @@ endsnippet
 
 snippet lra "langle rangle" i
 \langle $1 \rangle
+endsnippet
+
+snippet lrf "lfloor rfloor" i
+\lfloor $1 \rfloor
+endsnippet
+
+snippet llrra "langle rangle" i
+\left\langle $1 \right\rangle
+endsnippet
+
+snippet llrrf "lfloor rfloor" i
+\left\lfloor $1 \right\rfloor
 endsnippet
 # }}}
 
