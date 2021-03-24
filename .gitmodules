@@ -79,3 +79,6 @@
 [submodule ".config/vim/pack/bundle/start/FastFold"]
 	path = .config/vim/pack/bundle/start/FastFold
 	url = https://github.com/Konfekt/FastFold.git
+[submodule ".config/vim/pack/lang/start/vim-apathy"]
+	path = .config/vim/pack/lang/start/vim-apathy
+	url = https://github.com/tpope/vim-apathy.git
