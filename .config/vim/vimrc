@@ -7,6 +7,8 @@ let &packpath = substitute(&packpath,
 	\ $HOME.'/.vim', $XDG_CONFIG_HOME.'/vim', 'g')
 let g:netrw_home = $XDG_CACHE_HOME.'/vim'
 
+" Allow filetype-specific plugins and indenting
+filetype plugin indent on
 " Enable syntax highlighting
 syntax on
 " Show line numbers and highlight current line number
@@ -103,9 +105,6 @@ endif
 
 " Recommended in editorconfig-vim README for interop with fugitive.vim
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
-
-" Allow filetype-specific plugins and indenting
-filetype plugin indent on
 
 " Enable man.vim and use it for 'K' keybind
 runtime ftplugin/man.vim

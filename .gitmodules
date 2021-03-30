@@ -82,3 +82,6 @@
 [submodule ".config/vim/pack/lang/start/vim-apathy"]
 	path = .config/vim/pack/lang/start/vim-apathy
 	url = https://github.com/tpope/vim-apathy.git
+[submodule ".config/vim/pack/lang/start/csv.vim"]
+	path = .config/vim/pack/lang/start/csv.vim
+	url = https://github.com/chrisbra/csv.vim
