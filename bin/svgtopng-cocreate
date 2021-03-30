@@ -1,0 +1,23 @@
+#!/bin/sh
+
+in=$1
+shift
+if [ "$1" ]
+then
+	if [ -z "$1" -o "$1" = "--" ]
+	then
+		out="${in%.*}.png"
+	else
+		out="$1"
+	fi
+	shift
+else
+	out="${in%.*}.png"
+fi
+
+# Inkscape does not support the "href" attribute and uses "xlink:href" instead
+# https://github.com/edemaine/cocreate/pull/165
+
+# Set background to #ffffff (white) instead of transparent
+
+sed 's/href=/xlink:href=/' "$in" | inkscape -p -o "$out" -b '#ffffff' "$@"

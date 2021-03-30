@@ -1,0 +1,22 @@
+#!/bin/sh
+# Use Inkscape to convert an SVG to a PNG
+# Usage: svgtopng INFILE [OUTFILE] [OPTIONS...]
+
+# Pass -b '#ffffff' for white background
+
+in=$1
+shift
+if [ "$1" ]
+then
+	if [ -z "$1" -o "$1" = "--" ]
+	then
+		out="${in%.*}.png"
+	else
+		out="$1"
+	fi
+	shift
+else
+	out="${in%.*}.png"
+fi
+
+inkscape "$in" -o "$out" "$@"

@@ -2,5 +2,4 @@
 # https://stackoverflow.com/a/13784772/
 # https://stackoverflow.com/a/6605085/
 
-convert -density 300 -trim "$1" -quality 100 \
-	"${2:-$(printf "%s" "$1" | sed 's/\.[^.]*$//').png}"
+convert -density 300 -trim "$1" -quality 100 "${2:-${1%.*}}"
