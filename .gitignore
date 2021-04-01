@@ -26,6 +26,7 @@
 !/.config/keepmenu
 !/.config/nano
 !/.config/pentadactyl
+!/.config/picom
 !/.config/qutebrowser
 /.config/qutebrowser/autoconfig.yml
 /.config/qutebrowser/bookmarks

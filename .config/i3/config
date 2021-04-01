@@ -190,8 +190,8 @@ bar {
 	position top
 }
 
-# Run autostart programs
-exec --no-startup-id dex -ae i3
+# Start picom
+exec --no-startup-id picom -b
 
 # Rebind keys with xmodmap
 # exec --no-startup-id xmodmap ~/.XModMap
@@ -201,6 +201,9 @@ exec --no-startup-id numlockx on
 
 # Set desktop background
 exec --no-startup-id ~/.local/share/rehome/feh/.fehbg
+
+# Run autostart programs
+exec --no-startup-id dex -ae i3
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
