@@ -21,7 +21,7 @@ alias diff='diff --color=auto'
 # Append to history instead of overwriting
 shopt -s histappend
 
-PROMPT_COMMAND='PS1="$(~/bin/make-prompt)"'
+PROMPT_COMMAND='. ~/bin/prompt-command'
 
 case ${TERM} in
 xterm*|rxvt*|Eterm|aterm|kterm|gnome*|urxvt*|alacritty)

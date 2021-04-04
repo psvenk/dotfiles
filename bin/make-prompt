@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 orange="$(tput setaf 3)"
 cyan="$(tput setaf 6)"
@@ -8,7 +8,7 @@ reset="$(tput sgr0)"
 
 prompt="[\[${orange}\]\u@\h\[${cyan}\] \w\[${reset}\]]"
 
-if [ $(id -ru) -ne 0 ]
+if [ "$(id -ru)" -ne 0 ]
 then
 	prompt="${prompt}\[${green}\]"
 else
@@ -28,3 +28,8 @@ then
 else
 	printf '%s' ' '
 fi
+
+# Make input light gray and output white (also see ~/bin/prompt-command)
+# https://wiki.archlinux.org/index.php?title=Bash/Prompt_customization&oldid=655849#Escapes_between_command_input_and_output
+# https://stromberg.dnsalias.org/~strombrg/PS0-prompt/
+tput setaf 7

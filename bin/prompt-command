@@ -1,0 +1,7 @@
+#!/bin/bash
+PS1="$(~/bin/make-prompt)"
+
+# Make input light gray and output white (also see ~/bin/make-prompt)
+# https://wiki.archlinux.org/index.php?title=Bash/Prompt_customization&oldid=655849#Escapes_between_command_input_and_output
+# https://stromberg.dnsalias.org/~strombrg/PS0-prompt/
+PS0="$(tput sgr0)"
