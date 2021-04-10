@@ -1,9 +1,6 @@
 " Make tabs 4 characters wide instead of 8
 call tabstop#set(4)
 
-" Disable conceal (to override vim-pandoc-syntax)
-setlocal conceallevel=0
-
 let s:compilation_enabled = 0
 
 function ToggleCompilation()
