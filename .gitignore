@@ -14,6 +14,7 @@
 !/.config/dmenu-frecency
 /.config/dmenu-frecency/state
 /.config/dmenu-frecency/tmp*
+!/.config/fontconfig
 !/.config/git
 /.config/git/gitk
 !/.config/gtk-3.0
