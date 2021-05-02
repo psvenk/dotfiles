@@ -41,6 +41,13 @@ set background=dark
 " Use my color scheme
 colorscheme mycolors
 
+" Use underline for spell check
+" (undercurl is not supported by Alacritty)
+" hi SpellBad guisp=red gui=undercurl guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE cterm=underline ctermul=red
+" TODO use Alacritty build with colored underline and investigate Vim support
+" https://github.com/vim/vim/issues/6174
+" https://github.com/alacritty/alacritty/pull/4660
+
 " Enable mouse support
 set mouse=a
 " Automatically continue comment lines
