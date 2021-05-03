@@ -77,4 +77,8 @@ include "%L"
 
 <Multi_key> <e> <l> <l> : "ℓ" U2113 # SCRIPT SMALL L
 
+<Multi_key> <p> <r> <o> <p> : "∝" U221D # PROPORTIONAL TO
+
+<Multi_key> <e> <m> <f> : "ℰ" U2130 # SCRIPT CAPITAL E
+
 # vim: set ft=conf:
