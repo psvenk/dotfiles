@@ -82,3 +82,28 @@ if &termguicolors || has('gui_running')
 		\ '#e9ebeb',
 		\ ]
 endif
+
+" Use underline for spell check (undercurl is not yet supported by Alacritty).
+
+" 2021-05-29: Depends on a patched Alacritty build until
+" <https://github.com/alacritty/alacritty/pull/4660> is merged; e.g.,
+" <https://github.com/psvenk/alacritty/tree/patched>
+" (the test suite is currently failing on this branch).
+if &term is# 'alacritty'
+	" Traditional colors
+	let &t_AU = "\e[58;5;%dm"
+	" RGB (true color)
+	let &t_8u = "\e[58;2;%d;%d;%dm"
+	" Make sure that underline color is properly cleared
+	let &t_me = &t_me . "\e[59m"
+
+	hi clear SpellBad
+	hi clear SpellCap
+	hi clear SpellLocal
+	hi clear SpellRare
+
+	hi SpellBad cterm=underline ctermul=Red gui=undercurl guisp=Red
+	hi SpellCap cterm=underline ctermul=DarkCyan gui=undercurl guisp=CornflowerBlue
+	hi SpellRare cterm=underline ctermbg=Magenta gui=undercurl guisp=Magenta
+	hi SpellLocal cterm=underline ctermul=Cyan gui=undercurl guisp=Cyan
+endif
