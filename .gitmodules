@@ -85,3 +85,15 @@
 [submodule ".config/vim/pack/lang/start/csv.vim"]
 	path = .config/vim/pack/lang/start/csv.vim
 	url = https://github.com/chrisbra/csv.vim
+[submodule ".config/vim/pack/lang/start/python-syntax"]
+	path = .config/vim/pack/lang/start/python-syntax
+	url = https://github.com/vim-python/python-syntax
+[submodule ".config/vim/pack/lang/start/vim-crystal"]
+	path = .config/vim/pack/lang/start/vim-crystal
+	url = https://github.com/vim-crystal/vim-crystal.git
+[submodule ".config/vim/pack/lang/start/vim-yaml"]
+	path = .config/vim/pack/lang/start/vim-yaml
+	url = https://github.com/stephpy/vim-yaml.git
+[submodule ".config/vim/pack/lang/start/vim-python-pep8-indent"]
+	path = .config/vim/pack/lang/start/vim-python-pep8-indent
+	url = https://github.com/Vimjas/vim-python-pep8-indent.git
