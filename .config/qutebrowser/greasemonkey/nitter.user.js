@@ -2,7 +2,7 @@
 // @name Twitter to Nitter redirect
 // @description Redirect twitter.com to a Nitter instance
 // @namespace psvenk
-// @version 0.5
+// @version 0.6
 // @match *://*.twitter.com/*
 // @author psvenk
 // @run-at document-start
@@ -13,6 +13,6 @@
 const currentURL = window.location.toString();
 const matches = currentURL.match(/(?:\w+\.)?twitter\.com/);
 if (matches) {
-	const newURL = currentURL.replace(matches[0], "nitter.skrep.in");
+	const newURL = currentURL.replace(matches[0], "nitter.pussthecat.org");
 	window.location.replace(newURL);
 }
