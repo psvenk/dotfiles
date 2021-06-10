@@ -1,0 +1,5 @@
+#!/bin/sh
+# Assemble a Compose file from Compose.in and the IPA additions.
+# IPA additions are the output of the script at
+# <https://github.com/psvenk/ipa-compose>
+cat Compose.in ipa.compose >Compose
