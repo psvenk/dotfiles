@@ -56,7 +56,7 @@ WIDTH=220
 [time]
 command=$SCRIPT_DIR/time
 interval=1
-STRFTIME_FORMAT=%I:%M:%S %p
+STRFTIME_FORMAT=%H:%M:%S
 TZONES=$DEFAULT_TZ,Asia/Kolkata,Etc/UTC
 TZ_LABELS=,India,UTC
 
