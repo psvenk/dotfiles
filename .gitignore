@@ -25,6 +25,7 @@
 !/.config/ibus
 /.config/ibus/bus
 !/.config/keepmenu
+!/.config/locale.conf
 !/.config/nano
 !/.config/pentadactyl
 !/.config/picom
