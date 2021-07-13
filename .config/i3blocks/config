@@ -48,8 +48,8 @@ interval=1800
 [calendar]
 command=$SCRIPT_DIR/calendar
 interval=3600
-DATEFMT=+%a %b %d
-SHORTFMT=+%a %b %d
+DATEFMT=+%a %Y-%m-%d
+SHORTFMT=+%a %Y-%m-%d
 HEIGHT=180
 WIDTH=220
 
