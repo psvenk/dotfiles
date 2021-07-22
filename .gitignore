@@ -37,6 +37,7 @@
 !/.config/rofi
 !/.config/sage
 /.config/sage/cache
+/.config/sage/R
 !/.config/termite
 /.config/termite/*.config
 !/.config/vim
