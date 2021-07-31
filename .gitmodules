@@ -97,3 +97,6 @@
 [submodule ".config/vim/pack/lang/start/vim-python-pep8-indent"]
 	path = .config/vim/pack/lang/start/vim-python-pep8-indent
 	url = https://github.com/Vimjas/vim-python-pep8-indent.git
+[submodule ".config/vim/pack/lang/start/Coqtail"]
+	path = .config/vim/pack/lang/start/Coqtail
+	url = https://github.com/whonore/Coqtail

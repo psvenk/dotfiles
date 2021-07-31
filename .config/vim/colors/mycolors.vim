@@ -107,3 +107,12 @@ if &term is# 'alacritty'
 	hi SpellRare cterm=underline ctermbg=Magenta gui=undercurl guisp=Magenta
 	hi SpellLocal cterm=underline ctermul=Cyan gui=undercurl guisp=Cyan
 endif
+
+" Better colors for dark background in Coqtail
+hi CoqtailChecked ctermbg=22 guibg=DarkGreen
+hi CoqtailSent ctermbg=17 guibg=DarkBlue
+
+hi CoqtailDiffAdded ctermbg=34 guibg=green4
+hi CoqtailDiffAddedBg ctermbg=22 guibg=DarkGreen
+hi CoqtailDiffRemoved ctermbg=124 guibg=red3
+hi CoqtailDiffRemovedBg ctermbg=52 guibg=DarkRed
