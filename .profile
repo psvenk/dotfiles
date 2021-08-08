@@ -31,6 +31,9 @@ export VDPAU_DRIVER=nvidia
 # (https://github.com/keepassxreboot/keepassxc/issues/5029)
 export QT_AUTO_SCREEN_SCALE_FACTOR=0
 
+# Enable Vim server (for SyncTeX)
+alias vim='vim --servername VIM'
+
 # XDG Base Directory Specification environment variables {{{1
 # https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
 export XDG_DATA_HOME=~/.local/share
@@ -88,6 +91,9 @@ export HISTFILE="$XDG_DATA_HOME"/bash/history
 export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node/repl_history
 # ~/.octave_hist/
 export OCTAVE_HISTFILE="$XDG_DATA_HOME"/octave/history
+# ~/.lesshst
+# less(1) does not need a history file.
+export LESSHISTFILE=-
 
 # ~/.vimrc and ~/.vim/ (set in vimrc)
 export MYVIMRC="$XDG_CONFIG_HOME"/vim/vimrc
@@ -106,10 +112,6 @@ alias startx='startx $XINITRC'
 # }}}2
 
 # }}}1
-
-# ~/.lesshst
-# less(1) does not need a history file.
-export LESSHISTFILE=-
 
 # Make sure ~/.xsession-errors points to /dev/null {{{1
 # so that it does not grow to a huge size
