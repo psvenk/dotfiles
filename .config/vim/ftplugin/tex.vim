@@ -36,3 +36,6 @@ let g:vimtex_syntax_nested = {
 	\		],
 	\ 	},
 	\ }
+
+" Enable SyncTeX for Zathura
+let g:vimtex_view_method = 'zathura'
