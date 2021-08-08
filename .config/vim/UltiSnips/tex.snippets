@@ -1,5 +1,15 @@
 priority 1
 
+global !p
+import tex
+
+def include_screenshot():
+    output = f"SCREENSHOT {tex.include_screenshot()} SCREENSHOT"
+    snip.buffer[snip.line] = (output)
+    snip.cursor.set(snip.line, len(output))
+
+endglobal
+
 # General {{{
 
 snippet begin "\begin{} / \end{}" i
@@ -211,5 +221,23 @@ snippet bb "mathbb" i
 endsnippet
 
 # }}}
+
+# Include screenshot using maim
+# (see ~/.config/vim/python/tex.py)
+
+# A pre-expand action is used so that tex.include_screenshot is called exactly
+# once
+
+pre_expand "include_screenshot()"
+snippet "scr(eenshot)?" "Screenshot" r
+endsnippet
+
+# Generate \includegraphics for screenshot
+snippet "SCREENSHOT (.+) SCREENSHOT" "Screenshot includegraphics" r
+\begin{center}
+	\includegraphics[${1:scale=0.5}]{`!p snip.rv = match.group(1)`}
+\end{center}
+$0
+endsnippet
 
 # vim: set fdm=marker fdl=0:
