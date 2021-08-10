@@ -17,6 +17,8 @@ set cursorline
 " Enable modelines, including on Debian
 set modeline
 
+set ttyfast
+
 " Change cursor shape in insert and replace modes
 if &term =~ 'xterm\|rxvt-unicode\|alacritty\|st'
 	let &t_SI = "\e[6 q"
@@ -58,6 +60,8 @@ set smartcase
 set foldmethod=syntax
 " Use one space after a period, not two
 set nojoinspaces
+" Automatically re-read files when they are modified outside of Vim
+set autoread
 " Disable conceal (some filetype plugins enable it)
 set conceallevel=0
 
