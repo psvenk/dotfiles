@@ -89,7 +89,7 @@ endif
 " <https://github.com/alacritty/alacritty/pull/4660> is merged; e.g.,
 " <https://github.com/psvenk/alacritty/tree/patched>
 " (the test suite is currently failing on this branch).
-if &term is# 'alacritty'
+if &term =~ 'alacritty\|xterm'
 	" Traditional colors
 	let &t_AU = "\e[58;5;%dm"
 	" RGB (true color)
