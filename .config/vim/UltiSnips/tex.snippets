@@ -48,9 +48,33 @@ snippet / "Fraction" i
 \frac{$1}{$2}
 endsnippet
 
+priority 2
+
+snippet d/ "Display fraction" i
+\dfrac{$1}{$2}
+endsnippet
+
+snippet t/ "Text fraction" i
+\tfrac{$1}{$2}
+endsnippet
+
+priority 1
+
 snippet "leg(endre)?" "Legendre symbol" ir
 \legendre{$1}{$2}
 endsnippet
+
+priority 2
+
+snippet "dleg(endre)?" "Display Legendre symbol" ir
+\dlegendre{$1}{$2}
+endsnippet
+
+snippet "tleg(endre)?" "Text Legendre symbol" ir
+\tlegendre{$1}{$2}
+endsnippet
+
+priority 1
 
 # }}}
 
