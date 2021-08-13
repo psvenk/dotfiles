@@ -7,6 +7,12 @@ would be useful to anyone else.
 
 git, POSIX sh
 
+## Soft dependencies
+
+### Vim
+
+Python 3 (UltiSnips), Zathura (VimTeX), xdotool (VimTeX)
+
 ## Installing on a new system
 
 ```console
@@ -16,6 +22,7 @@ $ for f in $(git ls-files); do
 > if [ -f "../$f" ]; then mv "../$f" "../$f.bak"; fi
 > done
 $ cd ..
+$ rm -rf dotfiles
 $ git init
 $ git remote add origin https://github.com/psvenk/dotfiles && git fetch
 $ git checkout -t origin/master
