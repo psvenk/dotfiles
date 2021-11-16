@@ -37,7 +37,8 @@ colors:
 
 bell:
   command:
-    program: xkbbell
+    program: beep
+    args: ["-f", "750", "-l", "100"]
 
 live_config_reload: false
 

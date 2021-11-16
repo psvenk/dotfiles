@@ -1,9 +1,0 @@
-[Desktop Entry]
-Type=Application
-Exec=redshift-gtk
-Hidden=false
-X-MATE-Autostart-enabled=true
-Name[en_US]=Redshift
-Name=Redshift
-Comment[en_US]=Color temperature adjustment tool
-Comment=Color temperature adjustment tool
