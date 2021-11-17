@@ -9,9 +9,23 @@ git, POSIX sh
 
 ## Soft dependencies
 
-### Vim
+Vim:
+- Vim
+- Python 3 (UltiSnips)
+- Zathura (VimTeX)
+- xdotool (VimTeX)
 
-Python 3 (UltiSnips), Zathura (VimTeX), xdotool (VimTeX)
+i3 window manager (X11):
+- i3
+- i3blocks
+- i3lock-color
+- dmenu-maim (includes recursive dependencies)
+
+Sway compositor (Wayland):
+- Sway
+- swaybg
+- swaylock-effects
+- dmenu-maim (includes recursive dependencies)
 
 ## Installing on a new system
 
