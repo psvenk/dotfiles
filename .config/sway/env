@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Environment variables that are only pertinent for Sway
+
+# PipeWire / xdg-desktop-portal-wlr
+# https://wiki.archlinux.org/index.php?title=PipeWire&oldid=702219#WebRTC_screen_sharing
+export XDG_CURRENT_DESKTOP=sway
+
+# Firefox
+# https://wiki.archlinux.org/title/Firefox#Wayland
+export MOZ_ENABLE_WAYLAND=1
