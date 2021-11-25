@@ -29,12 +29,7 @@ Sway compositor (Wayland):
 
 Other:
 - ydotool (for Keepmenu)
-  + Make sure to make `/dev/uinput` writeable, set the `setuid` bit on
-    `/usr/bin/ydotoold` (`u+s`), and make the `ydotool` socket accessible by
-    the group (`g+rw`). More info: [1], [2]
-
-[1]: https://github.com/ReimuNotMoe/ydotool/issues/25#issuecomment-535842993
-[2]: https://aur.archlinux.org/packages/ydotool/#comment-825697
+  + Make sure to make `/dev/uinput` writeable
 
 ## Installing on a new system
 

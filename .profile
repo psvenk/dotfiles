@@ -34,6 +34,16 @@ export QT_AUTO_SCREEN_SCALE_FACTOR=0
 # Enable Vim server (for SyncTeX)
 alias vim='vim --servername VIM'
 
+# Use dmenu colors in bemenu
+IFS='' read BEMENU_OPTS <<'EOF'
+--tb '#005577' --tf '#eeeeee' \
+--fb '#222222' --ff '#bbbbbb' \
+--nb '#222222' --nf '#bbbbbb' \
+--hb '#005577' --hf '#eeeeee' \
+--sb '#005577' --sf '#eeeeee'
+EOF
+export BEMENU_OPTS
+
 # XDG Base Directory Specification environment variables {{{1
 # https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
 export XDG_DATA_HOME=~/.local/share
