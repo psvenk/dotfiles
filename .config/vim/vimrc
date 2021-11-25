@@ -40,6 +40,9 @@ if &term =~ 'alacritty\|st'
 	set ttymouse=sgr
 endif
 
+" Use vim-fakeclip for clipboard if running on Wayland
+let g:fakeclip_provide_clipboard_key_mappings = !empty($WAYLAND_DISPLAY)
+
 " Ensure that colors for dark background are used
 set background=dark
 
