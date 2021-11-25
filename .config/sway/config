@@ -23,6 +23,11 @@ mode "$mode_system" {
 
 bindsym $mod+Pause mode "$mode_system"
 
+# Expose WAYLAND_DISPLAY and XDG_CURRENT_DESKTOP to PipeWire
+# <https://github.com/emersion/xdg-desktop-portal-wlr/wiki/%22It-doesn't-work%22-Troubleshooting-Checklist>
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+systemctl --user restart wireplumber xdg-desktop-portal
+
 # Run autostart programs
 exec --no-startup-id dex -ae sway
 
@@ -32,5 +37,7 @@ for_window [app_id="firefox"] layout tabbed
 for_window [app_id="com.nextcloud.desktopclient.nextcloud"] floating enable; move position cursor; move down 20 px
 for_window [app_id="yad"] floating enable; border none; move position cursor; move down 20 px
 for_window [app_id="zoom"] floating enable
+for_window [app_id="org.keepassxc.KeePassXC"] floating enable; sticky enable
 
 for_window [title="Firefox - Choose User Profile"] floating enable
+for_window [title="Firefox — Sharing Indicator"] floating enable; border none
