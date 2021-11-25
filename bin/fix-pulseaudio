@@ -1,0 +1,7 @@
+#!/bin/sh
+# Make sure that pulseaudio is loaded before pipewire to prevent race
+# conditions
+
+systemctl --user stop pipewire
+systemctl --user restart pulseaudio
+systemctl --user start pipewire
