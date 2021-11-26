@@ -10,9 +10,9 @@ fi
 # }}}1
 
 # Enable IBus where possible {{{1
-export GTK_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-export QT_IM_MODULE=ibus
+export GTK_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+export QT_IM_MODULE=fcitx
 # }}}1
 
 # Preferred programs {{{1
