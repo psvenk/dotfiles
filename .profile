@@ -44,6 +44,9 @@ IFS='' read BEMENU_OPTS <<'EOF'
 EOF
 export BEMENU_OPTS
 
+# Use qt5ct
+export QT_QPA_PLATFORMTHEME=qt5ct
+
 # XDG Base Directory Specification environment variables {{{1
 # https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
 export XDG_DATA_HOME=~/.local/share

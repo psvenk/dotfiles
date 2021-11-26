@@ -31,6 +31,9 @@
 !/.config/nano
 !/.config/pentadactyl
 !/.config/picom
+!/.config/qt5ct
+/.config/qt5ct/*
+!/.config/qt5ct/qt5ct.conf
 !/.config/qutebrowser
 /.config/qutebrowser/autoconfig.yml
 /.config/qutebrowser/bookmarks

@@ -165,11 +165,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-bar {
-	status_command SCRIPT_DIR=~/.config/i3blocks/blocklets i3blocks
-	position top
-}
-
 # Layout overrides (X11/XWayland)
 for_window [class="Pale moon"] layout tabbed
 for_window [instance="chromium"] layout tabbed
