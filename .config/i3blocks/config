@@ -11,7 +11,7 @@ separator=true
 separator_block_width=15
 
 [volume-pulseaudio]
-command=$SCRIPT_DIR/volume-pulseaudio
+command=$SCRIPT_DIR/volume-pipewire
 interval=once
 signal=1
 
