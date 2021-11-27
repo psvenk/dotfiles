@@ -16,11 +16,29 @@ Layout=
 # Name
 Name=m17n_ta_phonetic
 # Layout
-Layout=
+Layout=us
 
 [Groups/0/Items/2]
 # Name
+Name=m17n_sa_IAST
+# Layout
+Layout=
+
+[Groups/0/Items/3]
+# Name
 Name=m17n_sa_itrans
+# Layout
+Layout=
+
+[Groups/0/Items/4]
+# Name
+Name=keyboard-ru-phonetic
+# Layout
+Layout=
+
+[Groups/0/Items/5]
+# Name
+Name=keyboard-gr
 # Layout
 Layout=
 

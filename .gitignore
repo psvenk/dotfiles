@@ -16,7 +16,8 @@
 /.config/dmenu-frecency/tmp*
 !/.config/fontconfig
 !/.config/fcitx5
-/.config/fcitx5/conf
+/.config/fcitx5/conf/*
+!/.config/fcitx5/conf/*.conf
 !/.config/git
 /.config/git/gitk
 !/.config/gtk-3.0
