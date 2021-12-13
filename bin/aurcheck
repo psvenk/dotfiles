@@ -26,7 +26,7 @@ my %ignored = map {$_ => 1} (@cfgignored, @pacmanignored);
 # Non-VCS packages {{{
 for (`pacman -Qm | aur vercmp`) {
 	chomp;
-	my ($pkg) = split /:/;
+	my ($pkg) = split;
 	say if not $ignored{$pkg};
 }
 # }}}
