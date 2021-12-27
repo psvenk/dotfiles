@@ -125,5 +125,5 @@ Terminal=false
 Type=Application
 Categories=
 NoDisplay=true
-#OnlyShowIn=MATE;
+OnlyShowIn=MATE;
 X-MATE-AutoRestart=true

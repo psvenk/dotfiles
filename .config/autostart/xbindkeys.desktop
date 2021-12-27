@@ -7,3 +7,4 @@ Name[en_US]=XBindKeys
 Name=XBindKeys
 Comment[en_US]=Disable middle mouse button to paste text from clipboard
 Comment=Disable middle mouse button to paste text from clipboard
+OnlyShowIn=MATE;i3
