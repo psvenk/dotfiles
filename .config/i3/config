@@ -31,3 +31,5 @@ exec --no-startup-id picom -b
 
 # Run autostart programs
 exec --no-startup-id dex -ae i3
+
+# vim: set ft=i3config:

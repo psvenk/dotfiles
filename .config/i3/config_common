@@ -183,3 +183,5 @@ for_window [class="VirtualBox"] floating enable
 
 for_window [window_role="(About|Preferences|Error)"] floating enable
 for_window [window_role="view-source"] floating enable
+
+# vim: set ft=i3config:

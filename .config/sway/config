@@ -46,3 +46,5 @@ for_window [app_id="org.keepassxc.KeePassXC"] floating enable; sticky enable
 
 for_window [title="Firefox - Choose User Profile"] floating enable
 for_window [title="Firefox — Sharing Indicator"] floating enable; border none
+
+# vim: set ft=i3config:
