@@ -20,4 +20,4 @@ fi
 
 # Set background to #ffffff (white) instead of transparent
 
-sed 's/href=/xlink:href=/' "$in" | inkscape -p -o "$out" -b '#ffffff' "$@"
+sed 's/href=/xlink:href=/' "$in" | sed 's/xlink:xlink/xlink/' | inkscape -p -o "$out" -b '#ffffff' "$@"
