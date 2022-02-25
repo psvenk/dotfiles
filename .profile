@@ -31,9 +31,6 @@ export VDPAU_DRIVER=nvidia
 # (https://github.com/keepassxreboot/keepassxc/issues/5029)
 export QT_AUTO_SCREEN_SCALE_FACTOR=0
 
-# Enable Vim server (for SyncTeX)
-alias vim='vim --servername VIM'
-
 # Use dmenu colors in bemenu
 IFS='' read BEMENU_OPTS <<'EOF'
 --tb '#005577' --tf '#eeeeee' \
@@ -121,6 +118,9 @@ export PENTADACTYL_INIT=':source $MY_PENTADACTYLRC'
 
 # ~/.xinitrc
 alias startx='startx $XINITRC'
+
+# Enable Vim server (for SyncTeX)
+alias vim='vim --servername VIM'
 
 # }}}2
 
