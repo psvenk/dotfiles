@@ -39,8 +39,3 @@ let g:vimtex_syntax_nested = {
 
 " Enable SyncTeX for Zathura
 let g:vimtex_view_method = 'zathura'
-
-" Disable xdotool on Wayland
-if !empty($WAYLAND_DISPLAY)
-	let g:vimtex_view_automatic_xwin = 0
-endif
