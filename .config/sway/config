@@ -42,6 +42,7 @@ for_window [app_id="firefox"] layout tabbed
 for_window [app_id="com.nextcloud.desktopclient.nextcloud"] floating enable; move position cursor; move down 20 px
 for_window [app_id="yad"] floating enable; border none; move position cursor; move down 20 px
 for_window [app_id="zoom"] floating enable
+for_window [class="^(start|join)\\?"] floating enable
 for_window [app_id="org.keepassxc.KeePassXC"] floating enable; sticky enable
 
 for_window [title="Firefox - Choose User Profile"] floating enable
