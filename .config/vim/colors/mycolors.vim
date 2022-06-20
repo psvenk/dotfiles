@@ -84,11 +84,6 @@ if &termguicolors || has('gui_running')
 endif
 
 " Use underline for spell check (undercurl is not yet supported by Alacritty).
-
-" 2021-05-29: Depends on a patched Alacritty build until
-" <https://github.com/alacritty/alacritty/pull/4660> is merged; e.g.,
-" <https://github.com/psvenk/alacritty/tree/patched>
-" (the test suite is currently failing on this branch).
 if &term =~ 'alacritty\|xterm'
 	" Traditional colors
 	let &t_AU = "\e[58;5;%dm"
@@ -96,6 +91,9 @@ if &term =~ 'alacritty\|xterm'
 	let &t_8u = "\e[58;2;%d;%d;%dm"
 	" Make sure that underline color is properly cleared
 	let &t_me = &t_me . "\e[59m"
+	" Required for colored underline support in Alacritty
+	" https://github.com/vim/vim/issues/10239#issuecomment-1107182341
+	let &t_RV = "\<Esc>[>c"
 
 	hi clear SpellBad
 	hi clear SpellCap
