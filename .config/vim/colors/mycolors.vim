@@ -85,9 +85,10 @@ endif
 
 " Use underline for spell check (undercurl is not yet supported by Alacritty).
 if &term =~ 'alacritty\|xterm'
-	" Traditional colors
+	" https://sw.kovidgoyal.net/kitty/underlines/
+	" Colored underline: traditional colors
 	let &t_AU = "\e[58;5;%dm"
-	" RGB (true color)
+	" Colored underline: RGB (true color)
 	let &t_8u = "\e[58;2;%d;%d;%dm"
 	" Make sure that underline color is properly cleared
 	let &t_me = &t_me . "\e[59m"
@@ -95,15 +96,19 @@ if &term =~ 'alacritty\|xterm'
 	" https://github.com/vim/vim/issues/10239#issuecomment-1107182341
 	let &t_RV = "\<Esc>[>c"
 
+	" Undercurl
+	let &t_Cs = "\e[4:3m"
+	let &t_Ce = "\e[4:0m"
+
 	hi clear SpellBad
 	hi clear SpellCap
 	hi clear SpellLocal
 	hi clear SpellRare
 
-	hi SpellBad cterm=underline ctermul=Red gui=undercurl guisp=Red
-	hi SpellCap cterm=underline ctermul=DarkCyan gui=undercurl guisp=CornflowerBlue
-	hi SpellRare cterm=underline ctermbg=Magenta gui=undercurl guisp=Magenta
-	hi SpellLocal cterm=underline ctermul=Cyan gui=undercurl guisp=Cyan
+	hi SpellBad cterm=undercurl ctermul=Red gui=undercurl guisp=Red
+	hi SpellCap cterm=undercurl ctermul=DarkCyan gui=undercurl guisp=CornflowerBlue
+	hi SpellRare cterm=undercurl ctermbg=Magenta gui=undercurl guisp=Magenta
+	hi SpellLocal cterm=undercurl ctermul=Cyan gui=undercurl guisp=Cyan
 endif
 
 " Better colors for dark background in Coqtail
