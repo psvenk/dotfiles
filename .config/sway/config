@@ -1,12 +1,8 @@
 # Directives exclusively for Sway
 include ~/.config/i3/config_common
+include ~/.config/sway/`hostname`
 
-input "type:keyboard" {
-	xkb_options caps:ctrl_modifier,compose:rwin
-	xkb_numlock enable
-}
-
-output * bg ~/images/Wallpapers/wallpaper fit
+output * bg ~/images/Wallpapers/wallpaper fill
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {

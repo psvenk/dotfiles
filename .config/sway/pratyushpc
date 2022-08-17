@@ -1,0 +1,6 @@
+input "type:keyboard" {
+	xkb_options caps:ctrl_modifier,compose:rwin
+	xkb_numlock enable
+}
+
+# vim: set ft=i3config:
