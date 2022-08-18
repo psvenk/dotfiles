@@ -20,8 +20,6 @@
 !/.config/fcitx5/conf/*.conf
 !/.config/git
 /.config/git/gitk
-!/.config/gtk-3.0
-/.config/gtk-3.0/bookmarks
 !/.config/i3
 !/.config/i3blocks
 !/.config/i3status
