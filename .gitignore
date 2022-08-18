@@ -46,6 +46,7 @@
 /.config/sage/R
 /.config/sage/temp
 !/.config/sway
+!/.config/swaylock
 !/.config/termite
 /.config/termite/*.config
 !/.config/vim
