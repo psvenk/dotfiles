@@ -17,7 +17,6 @@ export QT_IM_MODULE=fcitx
 
 # Preferred programs {{{1
 export EDITOR=vim
-export BROWSER=palemoon
 export MANPAGER='vim -M +MANPAGER +"setl nonumber" -'
 # }}}1
 
@@ -135,5 +134,7 @@ then
 	ln -s /dev/null "$HOME"/.xsession-errors
 fi
 # }}}1
+
+[ -e "$XDG_CONFIG_HOME/$(hostname).profile" ] && . "$XDG_CONFIG_HOME/$(hostname).profile"
 
 # vim: set fdm=marker:
