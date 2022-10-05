@@ -19,35 +19,39 @@ set modeline
 
 set ttyfast
 
-" Change cursor shape in insert and replace modes
-if &term =~ 'xterm\|rxvt-unicode\|alacritty\|st'
-	let &t_SI = "\e[6 q"
-	let &t_SR = "\e[4 q"
-	let &t_EI = "\e[2 q"
-endif
+function TerminalActions()
+	" Change cursor shape in insert and replace modes
+	if &term =~ 'xterm\|rxvt-unicode\|alacritty\|st'
+		let &t_SI = "\e[6 q"
+		let &t_SR = "\e[4 q"
+		let &t_EI = "\e[2 q"
+	endif
 
-" Use true color (24-bit) in terminal
-if $COLORTERM is# 'truecolor'
-	set termguicolors
-endif
+	" Use true color (24-bit) in terminal
+	if $COLORTERM is# 'truecolor'
+		set termguicolors
+	endif
 
-if &term =~ 'alacritty\|st'
-	" Fix truecolor
-	" <https://github.com/alacritty/alacritty/issues/109>
-	let &t_8f = "\e[38;2;%lu;%lu;%lum"
-	let &t_8b = "\e[48;2;%lu;%lu;%lum"
-	" Enable proper mouse support
-	set ttymouse=sgr
-endif
+	if &term =~ 'alacritty\|st'
+		" Fix truecolor
+		" <https://github.com/alacritty/alacritty/issues/109>
+		let &t_8f = "\e[38;2;%lu;%lu;%lum"
+		let &t_8b = "\e[48;2;%lu;%lu;%lum"
+		" Enable proper mouse support
+		set ttymouse=sgr
+	endif
+
+	" Ensure that colors for dark background are used
+	set background=dark
+
+	" Use my color scheme
+	colorscheme mycolors
+endfunction
+call TerminalActions()
+autocmd TermChanged * call TerminalActions()
 
 " Use vim-fakeclip for clipboard if running on Wayland
 let g:fakeclip_provide_clipboard_key_mappings = !empty($WAYLAND_DISPLAY)
-
-" Ensure that colors for dark background are used
-set background=dark
-
-" Use my color scheme
-colorscheme mycolors
 
 " Enable mouse support
 set mouse=a
