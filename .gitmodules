@@ -106,3 +106,6 @@
 [submodule ".config/vim/pack/lang/start/hare.vim"]
 	path = .config/vim/pack/lang/start/hare.vim
 	url = https://git.sr.ht/~sircmpwn/hare.vim
+[submodule ".config/vim/pack/bundle/start/vim-gnupg"]
+	path = .config/vim/pack/bundle/start/vim-gnupg
+	url = https://github.com/jamessan/vim-gnupg
