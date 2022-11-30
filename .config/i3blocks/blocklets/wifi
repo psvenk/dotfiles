@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Make sure that bars are displayed instead of asterisks
+# https://cgit.freedesktop.org/NetworkManager/NetworkManager/tree/libnm-core/nm-utils.c?id=5660bbfacc2d1c96a8cf9dc542312a1468646543#n2894
+unset TERM
+
+[ -n "$BLOCK_BUTTON" ] && networkmanager_dmenu
+strength=$(nmcli -g IN-USE,BARS -w 1 device wifi |
+	awk -F':' '/^\*/{if (NR!=1) {print $2}}')
+printf '%s\n' "${strength:-down}"

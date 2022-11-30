@@ -28,6 +28,7 @@
 !/.config/keepmenu
 !/.config/locale.conf
 !/.config/nano
+!/.config/networkmanager-dmenu
 !/.config/pentadactyl
 !/.config/picom
 !/.config/qt5ct

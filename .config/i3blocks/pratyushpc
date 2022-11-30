@@ -45,6 +45,11 @@ command=$SCRIPT_DIR/weather
 color=#A4C2F4
 interval=1800
 
+[wifi]
+command=$SCRIPT_DIR/wifi
+label=wifi: 
+interval=30
+
 [calendar]
 command=$SCRIPT_DIR/calendar
 interval=3600
