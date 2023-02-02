@@ -25,6 +25,7 @@
 !/.config/i3status
 !/.config/ibus
 /.config/ibus/bus
+!/.config/ipython
 !/.config/keepmenu
 !/.config/locale.conf
 !/.config/nano
