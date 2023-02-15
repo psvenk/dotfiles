@@ -109,3 +109,6 @@
 [submodule ".config/vim/pack/bundle/start/vim-gnupg"]
 	path = .config/vim/pack/bundle/start/vim-gnupg
 	url = https://github.com/jamessan/vim-gnupg
+[submodule ".config/vim/pack/lang/start/vim-bluespec"]
+	path = .config/vim/pack/lang/start/vim-bluespec
+	url = https://github.com/michaeltanner/vim-bluespec
