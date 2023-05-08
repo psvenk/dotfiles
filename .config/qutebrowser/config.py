@@ -18,7 +18,7 @@ c.hints.auto_follow = 'full-match'
 c.content.pdfjs = True
 
 c.content.javascript.enabled = False
-c.content.javascript.can_access_clipboard = True
+c.content.javascript.clipboard = 'access'
 
 # Use user agent of upstream browser (Chromium) {{{
 # to reduce fingerprinting and compatibility issues
@@ -48,10 +48,10 @@ config.bind('sPP', 'open -t -- ddg {primary}')
 # }}}
 
 # Bindings for controlling adblock whitelist {{{
-config.bind('tbh', 'config-cycle -p -t -u *://{url:host}/* content.host_blocking.enabled ;; reload')
-config.bind('tbH', 'config-cycle -p -t -u *://*.{url:host}/* content.host_blocking.enabled ;; reload')
-config.bind('tBh', 'config-cycle -p -u *://{url:host}/* content.host_blocking.enabled ;; reload')
-config.bind('tBH', 'config-cycle -p -u *://*.{url:host}/* content.host_blocking.enabled ;; reload')
+config.bind('tbh', 'config-cycle -p -t -u *://{url:host}/* content.blocking.enabled ;; reload')
+config.bind('tbH', 'config-cycle -p -t -u *://*.{url:host}/* content.blocking.enabled ;; reload')
+config.bind('tBh', 'config-cycle -p -u *://{url:host}/* content.blocking.enabled ;; reload')
+config.bind('tBH', 'config-cycle -p -u *://*.{url:host}/* content.blocking.enabled ;; reload')
 # }}}
 
 # Aliases {{{
