@@ -5,8 +5,6 @@ TriggerKeys=
 EnumerateWithTriggerKeys=True
 # Temporally switch between first and current Input Method
 AltTriggerKeys=
-# Enumerate Input Method Backward
-EnumerateBackwardKeys=
 # Skip first input method while enumerating
 EnumerateSkipFirst=False
 # Enumerate Input Method Group Forward
@@ -31,6 +29,9 @@ TogglePreedit=
 [Hotkey/EnumerateForwardKeys]
 0=Alt+Super+space
 
+[Hotkey/EnumerateBackwardKeys]
+0=Alt+Shift+Super+space
+
 [Behavior]
 # Active By Default
 ActiveByDefault=False
@@ -48,6 +49,10 @@ CompactInputMethodInformation=False
 ShowFirstInputMethodInformation=True
 # Default page size
 DefaultPageSize=5
+# Override Xkb Option
+OverrideXkbOption=False
+# Custom Xkb Option
+CustomXkbOption=
 # Force Enabled Addons
 EnabledAddons=
 # Preload input method to be used by default
