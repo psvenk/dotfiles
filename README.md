@@ -9,27 +9,46 @@ git, POSIX sh
 
 ## Soft dependencies
 
+Arch Linux package names follow.
+
 Vim:
-- Vim
-- Python 3 (UltiSnips)
-- Zathura (VimTeX)
-- xdotool (VimTeX)
+- [`gvim`][gvim]
+- [`python`][python] (UltiSnips)
+- [`zathura`][zathura] (VimTeX)
+- [`zathura-pdf-mupdf`][zathura] (VimTeX)
 
-i3 window manager (X11):
-- i3
-- i3blocks
-- i3lock-color
-- dmenu-maim (includes recursive dependencies)
+General:
+- [`i3blocks`][i3blocks]
+	+ [`ttf-font-awesome`][ttf-font-awesome]
+- [`keepmenu`][keepmenu]
+- [dmenu-maim][dmenu-maim]
+- [dmenu-frecency][dmenu-frecency]
 
-Sway compositor (Wayland):
-- Sway
-- swaybg
-- swaylock-effects
-- dmenu-maim (includes recursive dependencies)
-
-Other:
-- ydotool (for Keepmenu)
+Wayland-specific:
+- [`sway`][sway]
+- [`swaybg`][swaybg]
+- [`swaylock-effects`][swaylock-effects]<sup>AUR</sup>
+- wl-clipboard (vim-fakeclip)
+- ydotool (keepmenu)
   + Make sure to make `/dev/uinput` writeable
+- polkit-gnome
+
+X11-specific:
+- [`i3-wm`][i3-wm]
+- [`i3lock-color`][i3lock-color]<sup>AUR</sup>
+- [`xdotool`][xdotool] (VimTeX)
+
+[gvim]: https://archlinux.org/packages/extra/x86_64/gvim/
+[python]: https://archlinux.org/packages/core/x86_64/python/
+[zathura]: https://archlinux.org/packages/community/x86_64/zathura/
+
+[i3blocks]: https://archlinux.org/packages/community/x86_64/i3blocks/
+
+[dmenu-maim]: https://github.com/psvenk/dmenu-maim
+[dmenu-frecency]: https://github.com/psvenk/dmenu-frecency
+
+[i3-wm]: https://archlinux.org/packages/community/x86_64/i3-wm/
+[i3lock-color]: https://aur.archlinux.org/packages/i3lock-color
 
 ## Installing on a new system
 
