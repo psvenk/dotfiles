@@ -32,11 +32,17 @@ Layout=
 
 [Groups/0/Items/4]
 # Name
-Name=keyboard-ru-phonetic
+Name=m17n_ml_mozhi
 # Layout
 Layout=
 
 [Groups/0/Items/5]
+# Name
+Name=keyboard-ru-phonetic
+# Layout
+Layout=
+
+[Groups/0/Items/6]
 # Name
 Name=keyboard-gr
 # Layout
