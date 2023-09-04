@@ -38,8 +38,8 @@ c.url.searchengines['ddg'] = c.url.searchengines['DEFAULT']
 c.url.auto_search = 'never'
 c.url.open_base_url = True
 
-config.bind('so', 'set-cmd-text -s :open -- ddg')
-config.bind('sO', 'set-cmd-text -s :open -t -- ddg')
+config.bind('so', 'cmd-set-text -s :open -- ddg')
+config.bind('sO', 'cmd-set-text -s :open -t -- ddg')
 
 config.bind('spp', 'open -- ddg {clipboard}')
 config.bind('spP', 'open -- ddg {primary}')
