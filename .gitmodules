@@ -115,3 +115,6 @@
 [submodule ".config/vim/pack/lang/start/typst.vim"]
 	path = .config/vim/pack/lang/start/typst.vim
 	url = https://github.com/kaarmu/typst.vim.git
+[submodule ".config/vim/pack/lang/start/vim-css-color"]
+	path = .config/vim/pack/lang/start/vim-css-color
+	url = https://github.com/ap/vim-css-color.git
