@@ -118,3 +118,6 @@
 [submodule ".config/vim/pack/lang/start/vim-css-color"]
 	path = .config/vim/pack/lang/start/vim-css-color
 	url = https://github.com/ap/vim-css-color.git
+[submodule ".config/vim/pack/lang/start/vim-antlr"]
+	path = .config/vim/pack/lang/start/vim-antlr
+	url = https://github.com/dylon/vim-antlr
