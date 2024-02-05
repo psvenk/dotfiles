@@ -121,3 +121,6 @@
 [submodule ".config/vim/pack/lang/start/vim-antlr"]
 	path = .config/vim/pack/lang/start/vim-antlr
 	url = https://github.com/dylon/vim-antlr
+[submodule ".config/vim/pack/bundle/start/vim-ormolu"]
+	path = .config/vim/pack/bundle/start/vim-ormolu
+	url = https://github.com/sdiehl/vim-ormolu
