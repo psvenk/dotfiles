@@ -124,3 +124,6 @@
 [submodule ".config/vim/pack/bundle/start/vim-ormolu"]
 	path = .config/vim/pack/bundle/start/vim-ormolu
 	url = https://github.com/sdiehl/vim-ormolu
+[submodule ".config/vim/pack/lang/start/haskell-vim"]
+	path = .config/vim/pack/lang/start/haskell-vim
+	url = https://github.com/neovimhaskell/haskell-vim
