@@ -27,8 +27,10 @@ unset SSH_AUTH_SOCK
 export VDPAU_DRIVER=nvidia
 
 # Fix Qt scaling issues
-# (https://github.com/keepassxreboot/keepassxc/issues/5029)
+# https://github.com/keepassxreboot/keepassxc/issues/5029
+# https://github.com/qutebrowser/qutebrowser/issues/7899
 export QT_AUTO_SCREEN_SCALE_FACTOR=0
+export QT_SCALE_FACTOR_ROUNDING_POLICY=round
 
 # Use dmenu colors in bemenu
 IFS='' read BEMENU_OPTS <<'EOF'
