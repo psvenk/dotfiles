@@ -43,6 +43,8 @@ export BEMENU_OPTS
 # Use qt5ct
 export QT_QPA_PLATFORMTHEME=qt5ct
 
+export GHC_FLAGS=-dynamic
+
 # XDG Base Directory Specification environment variables {{{1
 # https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
 export XDG_DATA_HOME=~/.local/share
