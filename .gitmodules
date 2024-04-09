@@ -130,3 +130,6 @@
 [submodule ".config/vim/pack/lang/start/happy.vim"]
 	path = .config/vim/pack/lang/start/happy.vim
 	url = https://github.com/andy-morris/happy.vim
+[submodule ".config/vim/pack/bundle/start/vim-gitgutter"]
+	path = .config/vim/pack/bundle/start/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git

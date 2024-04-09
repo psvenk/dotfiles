@@ -35,6 +35,11 @@ hi diffSubname ctermfg=White guifg=white
 hi diffAdded ctermfg=DarkGreen guifg=green3
 hi diffRemoved ctermfg=DarkRed guifg=red3
 
+" Better colors for gitgutter
+hi link GitGutterAdd diffAdded
+hi link GitGutterChange diffIndexLine
+hi link GitGutterDelete diffRemoved
+
 " Better colors for conceal
 hi Conceal ctermfg=White ctermbg=238 guifg=White guibg=grey27
 
