@@ -133,3 +133,6 @@
 [submodule ".config/vim/pack/bundle/start/vim-gitgutter"]
 	path = .config/vim/pack/bundle/start/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
+[submodule ".config/vim/pack/lang/start/slimv"]
+	path = .config/vim/pack/lang/start/slimv
+	url = https://github.com/kovisoft/slimv
