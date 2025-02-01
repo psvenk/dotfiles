@@ -8,6 +8,7 @@
 	recurse = true
 [push]
 	recurseSubmodules = check
+	default = upstream
 [commit]
 	gpgsign = true
 [pull]
