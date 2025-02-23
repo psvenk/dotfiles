@@ -142,3 +142,6 @@
 [submodule ".config/vim/pack/bundle/start/ale"]
 	path = .config/vim/pack/bundle/start/ale
 	url = https://github.com/dense-analysis/ale.git
+[submodule ".config/vim/pack/bundle/start/vim-emacsModeline"]
+	path = .config/vim/pack/bundle/start/vim-emacsModeline
+	url = https://github.com/Jorenar/vim-emacsModeline
