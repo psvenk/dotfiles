@@ -157,6 +157,10 @@ let g:UltiSnipsEditSplit = 'context'
 let g:markdown_fenced_languages = ['latex=tex', 'sh', 'console=sh']
 let g:pandoc#syntax#codeblocks#embeds#langs = g:markdown_fenced_languages
 
+" ALE
+let g:ale_enabled = 0
+autocmd FileType dafny ALEEnable
+
 " Basic settings to make it easier to use GVim if needed {{{
 if has('gui_running')
 	" Disable cursor blinking

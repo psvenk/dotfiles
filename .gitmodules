@@ -136,3 +136,9 @@
 [submodule ".config/vim/pack/lang/start/slimv"]
 	path = .config/vim/pack/lang/start/slimv
 	url = https://github.com/kovisoft/slimv
+[submodule ".config/vim/pack/lang/start/vim-dafny"]
+	path = .config/vim/pack/lang/start/vim-dafny
+	url = https://github.com/benknoble/vim-dafny.git
+[submodule ".config/vim/pack/bundle/start/ale"]
+	path = .config/vim/pack/bundle/start/ale
+	url = https://github.com/dense-analysis/ale.git
